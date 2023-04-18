@@ -11,16 +11,16 @@ import com.example.physiotherapycenterapplication.R.id;
 public class LoginPageActivity extends AppCompatActivity {
 
     TextView user;
-    Bundle extras;
+    Bundle extras;//Gia na paroume ta data apo to proigoumeno Activity
     String typeUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        extras = getIntent().getExtras();
+        extras = getIntent().getExtras();//Arxikopoiisi Bundle extras
         user = (TextView)findViewById(R.id.userText);
-        typeUser = extras.getString("TypeUser");
+        typeUser = extras.getString("TypeUser");//Apothikeusi tis extra pliroforias
         user.setText(typeUser);
     }
 }

@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button login;
+    Button login;//Gia tin apothikeusi tou koumpiou pou epilegei o xristis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,13 +18,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void moveToLoginPage(View view){
-        String userType;
-        login = (Button)view;
 
+    public void moveToLoginPage(View view){
+        String userType;//Gia apotikeusi tou onomatos tou epilegmenou koumpiou
+
+        //Pairnoume to typo xristi
+        login = (Button)view;
         userType = login.getText().toString();
 
+        //Metafora stin epomeni selida (Sto basicActivity uparxei by default)
+
         Intent intent = new Intent(getApplicationContext(),LoginPageActivity.class);
+        //intent.putExtra(key,value):pairnei extra dedomena sto epomeno activity (edw ton typo xristi)
         intent.putExtra("TypeUser",userType);
         startActivity(intent);
     }
