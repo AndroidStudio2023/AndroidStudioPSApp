@@ -2,6 +2,7 @@ package com.example.physiotherapycenterapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         userType = login.getText().toString();
 
-        Toast.makeText(this, userType, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(),LoginPageActivity.class);
+        intent.putExtra("TypeUser",userType);
+        startActivity(intent);
     }
 }
