@@ -10,4 +10,5 @@
 
     <color name="backgroundColor">#e0e0d1</color>
     <color name="buttonColor">#0099ff</color>
+    <color name="PrimariesColor">#66d9ff</color>
 </resources>

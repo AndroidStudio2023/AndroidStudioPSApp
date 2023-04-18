@@ -24,10 +24,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="64dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/appicon" />
+        android:src="@drawable/appicon1" />
 
     <TextView
         android:id="@+id/textView2"
@@ -75,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
         android:backgroundTint="@color/buttonColor"
+        android:onClick="moveToLoginPage"
         android:text="ΠΣΦ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
