@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
@@ -23,7 +22,7 @@ public class LoginPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login_page);
 
         extras = getIntent().getExtras();//Arxikopoiisi Bundle extras
-        user = (TextView)findViewById(R.id.userText);
+        user = findViewById(R.id.userText);
         typeUser = extras.getString("TypeUser");//Apothikeusi tis extra pliroforias
         //user.setText(typeUser);
 
@@ -32,8 +31,7 @@ public class LoginPageActivity extends AppCompatActivity {
 
     public void goToUserCentralPage(View view){
 
-        //Find login button
-        Button moveButton = findViewById(id.loginButton);
+
         //Find and save email
         EditText Email = findViewById(id.userEmail);
         String userEmail = Email.getText().toString();
