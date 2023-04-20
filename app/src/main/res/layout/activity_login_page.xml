@@ -39,7 +39,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/userEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -54,7 +54,7 @@
             android:textSize="16sp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/userPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -78,6 +78,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/buttonColor"
+        android:onClick="goToUserCentralPage"
         android:text="Log In"
         android:textColor="@color/white"
         android:textSize="16sp"

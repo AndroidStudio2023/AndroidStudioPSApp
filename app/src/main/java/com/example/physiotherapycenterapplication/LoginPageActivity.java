@@ -8,10 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
+import android.widget.Toast;
 
 import com.example.physiotherapycenterapplication.R.id;
-
-import org.w3c.dom.Text;
 
 public class LoginPageActivity extends AppCompatActivity {
 
@@ -36,18 +35,23 @@ public class LoginPageActivity extends AppCompatActivity {
         //Find login button
         Button moveButton = findViewById(id.loginButton);
         //Find and save email
-        EditText Email = findViewById(id.editTextTextEmailAddress);
+        EditText Email = findViewById(id.userEmail);
         String userEmail = Email.getText().toString();
         //Find and save password
-        EditText Password = findViewById(id.editTextTextPassword);
+        EditText Password = findViewById(id.userPassword);
         String userPassword = Password.getText().toString();
 
         //Elegxos dedomenwn xristi
         //!Pros to paron "uparxei" 1 xristis, o PSF
         if(typeUser.equals("ΠΣΦ") && userEmail.equals("psf@gmail.com") && userPassword.equals("1234")){
+            //Katharisma formas
+            Email.setText("");
+            Password.setText("");
             //Sundesi stin kentrikh selida PSF
             Intent intent = new Intent(getApplicationContext(),PSFCentralPage.class);
             startActivity(intent);
+        }else{
+            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
 
 
