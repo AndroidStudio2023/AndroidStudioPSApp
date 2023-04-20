@@ -2,11 +2,16 @@ package com.example.physiotherapycenterapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
 
 import com.example.physiotherapycenterapplication.R.id;
+
+import org.w3c.dom.Text;
 
 public class LoginPageActivity extends AppCompatActivity {
 
@@ -22,5 +27,29 @@ public class LoginPageActivity extends AppCompatActivity {
         user = (TextView)findViewById(R.id.userText);
         typeUser = extras.getString("TypeUser");//Apothikeusi tis extra pliroforias
         user.setText(typeUser);
+
+
+    }
+
+    public void goToUserCentralPage(View view){
+
+        //Find login button
+        Button moveButton = findViewById(id.loginButton);
+        //Find and save email
+        EditText Email = findViewById(id.editTextTextEmailAddress);
+        String userEmail = Email.getText().toString();
+        //Find and save password
+        EditText Password = findViewById(id.editTextTextPassword);
+        String userPassword = Password.getText().toString();
+
+        //Elegxos dedomenwn xristi
+        //!Pros to paron "uparxei" 1 xristis, o PSF
+        if(typeUser.equals("ΠΣΦ") && userEmail.equals("psf@gmail.com") && userPassword.equals("1234")){
+            //Sundesi stin kentrikh selida PSF
+            Intent intent = new Intent(getApplicationContext(),PSFCentralPage.class);
+            startActivity(intent);
+        }
+
+
     }
 }
