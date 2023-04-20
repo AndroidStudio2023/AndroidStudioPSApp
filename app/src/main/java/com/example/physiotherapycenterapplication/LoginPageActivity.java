@@ -25,7 +25,7 @@ public class LoginPageActivity extends AppCompatActivity {
         extras = getIntent().getExtras();//Arxikopoiisi Bundle extras
         user = (TextView)findViewById(R.id.userText);
         typeUser = extras.getString("TypeUser");//Apothikeusi tis extra pliroforias
-        user.setText(typeUser);
+        //user.setText(typeUser);
 
 
     }
