@@ -78,6 +78,7 @@
         android:backgroundTint="@color/buttonColor"
         android:onClick="moveToLoginPage"
         android:text="ΠΣΦ"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -90,6 +91,7 @@
         android:backgroundTint="@color/buttonColor"
         android:onClick="moveToLoginPage"
         android:text="Φυσικοθεραπευτής"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PSFLogButton" />
@@ -102,6 +104,7 @@
         android:backgroundTint="@color/buttonColor"
         android:onClick="moveToLoginPage"
         android:text="Ασθενής"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PhisLogButton" />
