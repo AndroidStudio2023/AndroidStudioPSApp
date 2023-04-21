@@ -22,12 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="158dp"
+        android:background="@color/backgroundColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow android:background="@color/white">
+        <TableRow android:background="@color/backgroundColor">
 
             <TextView
                 android:id="@+id/textView8"
@@ -257,14 +258,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="44dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textView23"
-            android:layout_width="250dp"
+            android:layout_width="240dp"
             android:layout_height="35dp"
             android:layout_weight="1"
+            android:background="@color/white"
             android:hint="Αναζήτηση"
             android:textColorHint="@color/black"
             android:textSize="20sp" />
@@ -276,6 +279,9 @@
         android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="44dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/black"
+        android:backgroundTintMode="add"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent" />
 
