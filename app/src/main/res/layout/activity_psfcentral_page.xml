@@ -305,11 +305,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/newPSButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/buttonColor"
+        android:onClick="LogOutORnextPage"
         android:text="Νέο Φυσικοθεραπευτήριο"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -322,20 +323,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/buttonColor"
+        android:onClick="LogOutORnextPage"
         android:text="Νέα Παροχή"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/newPSButton" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/LogOutButton"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@color/backgroundColor"
         android:drawableTop="@drawable/iconfinder_account_door_enter_login_3005767"
+        android:onClick="LogOutORnextPage"
         android:text="Log Out"
         android:textColor="@color/black"
         android:textSize="8sp"
