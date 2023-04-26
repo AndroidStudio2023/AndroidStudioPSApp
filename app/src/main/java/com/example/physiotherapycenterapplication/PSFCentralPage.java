@@ -15,6 +15,8 @@ public class PSFCentralPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_psfcentral_page);
+        //Change Action Title
+        getSupportActionBar().setTitle("Central Page");
     }
 
     //Analoga me to koumpi pou epilegei o xristis

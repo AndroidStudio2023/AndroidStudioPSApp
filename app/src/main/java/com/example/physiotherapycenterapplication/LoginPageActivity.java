@@ -22,6 +22,8 @@ public class LoginPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+        //Change Action Title
+        getSupportActionBar().setTitle("Login Page");
 
         extras = getIntent().getExtras();//Arxikopoiisi Bundle extras
         user = findViewById(R.id.userText);

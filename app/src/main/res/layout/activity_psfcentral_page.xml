@@ -355,6 +355,7 @@
         android:hint="Αναζήτηση"
         android:inputType="textPersonName"
         android:paddingLeft="5dp"
+        android:paddingBottom="3dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintStart_toEndOf="@+id/searchPSFButton" />
