@@ -42,12 +42,21 @@
         <EditText
             android:id="@+id/userEmail"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/white"
+            android:layout_height="35dp"
+            android:background="@drawable/normal_textfileds_border"
             android:backgroundTint="@null"
             android:ems="10"
+            android:gravity="bottom"
             android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:paddingBottom="3dp"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/emailErrorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/errorColor" />
 
         <TextView
             android:id="@+id/textView6"
@@ -61,11 +70,20 @@
         <EditText
             android:id="@+id/userPassword"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@color/white"
+            android:layout_height="35dp"
+            android:background="@drawable/normal_textfileds_border"
             android:ems="10"
+            android:gravity="bottom"
             android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:paddingBottom="3dp"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/passwordErrorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/errorColor" />
 
     </LinearLayout>
 
