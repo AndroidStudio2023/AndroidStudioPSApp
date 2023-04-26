@@ -7,5 +7,10 @@
     <string name="linkp1">Μάθετε περισσότερα</string>
 
     <!--IDs-->
-
+    <!--Strings Arrays-->
+    <string-array name="searchPSFsChoises">
+        <item>Α.Φ.Μ</item>
+        <item>Όνομα</item>
+        <item>Διέυθυνση</item>
+    </string-array>
 </resources>

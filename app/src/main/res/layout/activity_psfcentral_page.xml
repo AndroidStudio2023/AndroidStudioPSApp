@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
+    android:padding="2dp"
     tools:context=".PSFCentralPage">
 
     <ImageView
@@ -252,36 +253,16 @@
 
     </TableLayout>
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="44dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="240dp"
-            android:layout_height="35dp"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:hint="Αναζήτηση"
-            android:textColorHint="@color/black"
-            android:textSize="20sp" />
-    </SearchView>
-
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="100dp"
         android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="44dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/normal_textfileds_border"
         android:backgroundTintMode="add"
+        android:entries="@array/searchPSFsChoises"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -350,5 +331,32 @@
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/searchPSFButton"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/normal_textfileds_border"
+        android:padding="5dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/search" />
+
+    <EditText
+        android:id="@+id/searchPSFFiled"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/normal_textfileds_border"
+        android:ems="10"
+        android:hint="Αναζήτηση"
+        android:inputType="textPersonName"
+        android:paddingLeft="5dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintStart_toEndOf="@+id/searchPSFButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
