@@ -5,6 +5,9 @@
     <string name="Hello">Καλώς Ήρθατε!</string>
     <string name="descriptionMessage">Η ακόλουθη εφαρμογή αποτελεί:\nΈνα σύστημα διαχείρισης\nφυσικοθεραπευτηρίου, \nτο οποίο είναι διαθέσιμο για όλα\n τα μέλη του ΠΣΦ.</string>
     <string name="linkp1">Μάθετε περισσότερα</string>
+    <string name="patient">Νέος Ασθενής</string>
+    <string name="patientdescriptionMessage">Εισάγετε τα στοιχεία του ασθενή</string>
+
 
     <!--IDs-->
     <!--Strings Arrays-->
