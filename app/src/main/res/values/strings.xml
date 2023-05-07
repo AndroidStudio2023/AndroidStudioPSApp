@@ -7,7 +7,8 @@
     <string name="linkp1">Μάθετε περισσότερα</string>
     <string name="patient">Νέος Ασθενής</string>
     <string name="patientdescriptionMessage">Εισάγετε τα στοιχεία του ασθενή</string>
-
+    <string name="maindoctorpage">Κεντρική Σελίδα</string>
+    <string name="welcomedoctor">Καλός ορίσατε </string>
 
     <!--IDs-->
     <!--Strings Arrays-->
