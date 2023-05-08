@@ -12,6 +12,12 @@
         android:theme="@style/Theme.PhysiotherapyCenterApplication"
         tools:targetApi="31">
         <activity
+            android:name=".new_patient"
+            android:exported="false" />
+        <activity
+            android:name=".main_doctor_page"
+            android:exported="false" />
+        <activity
             android:name=".NewPSFCentralPage"
             android:exported="false" />
         <activity
