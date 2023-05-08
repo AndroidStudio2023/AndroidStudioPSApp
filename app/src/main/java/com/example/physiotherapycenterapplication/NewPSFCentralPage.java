@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,13 +35,13 @@ public class NewPSFCentralPage extends AppCompatActivity {
 
     //Next Page Function
     public void NextPage(View view){
-        int buttonID;
-        //Get ID button
-        buttonID = view.getId();
+        Button leftColumnButton;
+        //Get left column button/ left button "ΕΠΙΛΟΓΗ"
+        leftColumnButton = findViewById(R.id.goPhysPage);
 
         Intent intent;
-        //2131296468 -> id from the button for move to Physiotherapy Clinics Page
-        if(buttonID==2131296468){
+        //If view (selected button) is button from left column
+        if(view.equals(leftColumnButton)){
             intent = new Intent(getApplicationContext(),PSFCentralPage.class);
             startActivity(intent);
         }else{
@@ -49,15 +51,15 @@ public class NewPSFCentralPage extends AppCompatActivity {
 
     //Print column info function
     public void printInfo(View view){
-        int infoButtonID = view.getId();
+        ImageButton leftColumnInfoButton;
         String informationLeft = "Η αριστερή στύλη εμφανίζει τον \nαριθμό των φυσικοθεραπευτηρίων που\nσυντελούν τον ΠΣΦ. Το κουμπί\nΕΠΙΛΟΓΗ οδηγεί στην κεντρική\nσελίδα φυσικοθεραπευτηρίων.";
         String informationRight = "Η δεξιά στύλη εμφανίζει τον\nαριθμό των παροχών που\nμπορεί να προσφέρουν τα \nφυσικοθεραπευτήρια. Το κουμπί\nΕΠΙΛΟΓΗ οδηγεί στην κεντρική\nσελίδα παροχών.";
 
         TextView infoPanel = findViewById(R.id.informationText);
-
+        leftColumnInfoButton = findViewById(R.id.leftColInfo);
         //Left column
-        //2131296825->id from left imagebutton
-        if(infoButtonID==2131296825){
+        //If selected infoButton is imagebutton from left column
+        if(view.equals(leftColumnInfoButton)){
             //If info TextView hasn't text or has right col info text
             if(infoPanel.getText().equals("") || infoPanel.getText().equals(informationRight)){
                 infoPanel.setText(informationLeft);
@@ -65,9 +67,8 @@ public class NewPSFCentralPage extends AppCompatActivity {
                 //2sd click removes text
                 infoPanel.setText("");
             }
-        }else if(infoButtonID==2131296826){
+        }else{
             //Right column
-            //2131296826->id from right imagebutton
             //If info TextView hasn't text or has left col info text
             if(infoPanel.getText().equals("") || infoPanel.getText().equals(informationLeft)){
                 infoPanel.setText(informationRight);
