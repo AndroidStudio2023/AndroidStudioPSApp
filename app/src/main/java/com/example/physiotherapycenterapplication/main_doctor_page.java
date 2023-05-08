@@ -11,4 +11,8 @@ public class main_doctor_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_doctor_page);
     }
+
+
+
+
 }
