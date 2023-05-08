@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
-    tools:context=".NewPSFCentralPage">
+    tools:context=".NewPSFCentralPage" android:layout_width="match_parent">
 
     <ImageView
         android:id="@+id/imageView6"
@@ -78,6 +77,7 @@
         android:id="@+id/goPhysPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:onClick="NextPage"
         android:text="Επιλογή"
@@ -90,6 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:onClick="NextPage"
         android:text="ΕΠΙΛΟΓΗ"
         app:layout_constraintEnd_toEndOf="@+id/textView32"
@@ -110,5 +111,42 @@
         android:textSize="8sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/informationText"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goPhysPage" />
+
+    <ImageButton
+        android:id="@+id/leftColInfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@null"
+        android:onClick="printInfo"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/goPhysPage"
+        app:layout_constraintEnd_toStartOf="@+id/goPhysPage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/goPhysPage"
+        app:srcCompat="@drawable/questionform" />
+
+    <ImageButton
+        android:id="@+id/rightColInfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@null"
+        android:onClick="printInfo"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/goServPage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/goServPage"
+        app:layout_constraintTop_toTopOf="@+id/goServPage"
+        app:srcCompat="@drawable/questionform" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

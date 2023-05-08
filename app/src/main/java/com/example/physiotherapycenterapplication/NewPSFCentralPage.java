@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -44,5 +45,38 @@ public class NewPSFCentralPage extends AppCompatActivity {
         }else{
             Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //Print column info function
+    public void printInfo(View view){
+        int infoButtonID = view.getId();
+        String informationLeft = "Η αριστερή στύλη εμφανίζει τον \nαριθμό των φυσικοθεραπευτηρίων που\nσυντελούν τον ΠΣΦ. Το κουμπί\nΕΠΙΛΟΓΗ οδηγεί στην κεντρική\nσελίδα φυσικοθεραπευτηρίων.";
+        String informationRight = "Η δεξιά στύλη εμφανίζει τον\nαριθμό των παροχών που\nμπορεί να προσφέρουν τα \nφυσικοθεραπευτήρια. Το κουμπί\nΕΠΙΛΟΓΗ οδηγεί στην κεντρική\nσελίδα παροχών.";
+
+        TextView infoPanel = findViewById(R.id.informationText);
+
+        //Left column
+        //2131296825->id from left imagebutton
+        if(infoButtonID==2131296825){
+            //If info TextView hasn't text or has right col info text
+            if(infoPanel.getText().equals("") || infoPanel.getText().equals(informationRight)){
+                infoPanel.setText(informationLeft);
+            } else if (infoPanel.getText().equals("") || infoPanel.getText().equals(informationLeft)) {
+                //2sd click removes text
+                infoPanel.setText("");
+            }
+        }else if(infoButtonID==2131296826){
+            //Right column
+            //2131296826->id from right imagebutton
+            //If info TextView hasn't text or has left col info text
+            if(infoPanel.getText().equals("") || infoPanel.getText().equals(informationLeft)){
+                infoPanel.setText(informationRight);
+            } else if (infoPanel.getText().equals("") || infoPanel.getText().equals(informationRight)) {
+                //2sd click removes text
+                infoPanel.setText("");
+            }
+        }
+
+
     }
 }
