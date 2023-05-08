@@ -83,7 +83,7 @@ public class LoginPageActivity extends AppCompatActivity {
             Email.setText("");
             Password.setText("");
             //Sundesi stin kentrikh selida PSF
-            Intent intent = new Intent(getApplicationContext(),PSFCentralPage.class);
+            Intent intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
             startActivity(intent);
         }
 
