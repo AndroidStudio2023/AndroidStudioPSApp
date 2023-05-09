@@ -271,6 +271,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:onClick="GoPreviousORNextPage"
         android:text="Κεντρική Σελίδα Φυσικοθεραπευτηρίων"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -298,27 +299,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/buttonColor"
-        android:onClick="GoPreviousORNextPage"
+        android:onClick="goNextPage"
         android:text="Νέο Φυσικοθεραπευτήριο"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
-
-    <Button
-        android:id="@+id/GoPSFCentralButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/backgroundColor"
-        android:drawableTop="@drawable/iconfinder_account_door_enter_login_3005767"
-        android:onClick="GoPreviousORNextPage"
-        android:text="Central Page"
-        android:textColor="@color/black"
-        android:textSize="8sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/searchPSFButton"
@@ -347,5 +333,18 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintStart_toEndOf="@+id/searchPSFButton" />
+
+    <ImageButton
+        android:id="@+id/clinicsCentralReturn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:onClick="goCentralPage"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_545435" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,21 +23,17 @@ public class PSFCentralPage extends AppCompatActivity {
         getSupportActionBar().setTitle("Central Physiotherapy Clinic Page");
     }
 
-    //Analoga me to koumpi pou epilegei o xristis
-    //Ton pigainei stin antoistixi selida
-    public void GoPreviousORNextPage(View view){
-        //get button name
-        Button aButton= (Button)view;
-        String buttonName = aButton.getText().toString();
-        Intent intent;
 
-        if(buttonName.equals("Νέο Φυσικοθεραπευτήριο")){
-            intent = new Intent(getApplicationContext(),CreatePSPage.class);
-            startActivity(intent);
-        } else if (buttonName.equals("Central Page")) {
-            intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
-            //intent.putExtra("TypeUser","ΠΣΦ");
-            startActivity(intent);
-        }
+    public void goNextPage(View view){
+        Intent intent;
+        intent = new Intent(getApplicationContext(),CreatePSPage.class);
+        startActivity(intent);
+
+    }
+
+    public void goCentralPage(View view){
+        Intent intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
+        //intent.putExtra("TypeUser","ΠΣΦ");
+        startActivity(intent);
     }
 }

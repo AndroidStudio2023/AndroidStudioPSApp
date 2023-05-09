@@ -45,7 +45,8 @@ public class NewPSFCentralPage extends AppCompatActivity {
             intent = new Intent(getApplicationContext(),PSFCentralPage.class);
             startActivity(intent);
         }else{
-            Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+            intent = new Intent(getApplicationContext(),ServicesCentralPage.class);
+            startActivity(intent);
         }
     }
 
