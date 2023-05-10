@@ -36,8 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="email"
-            android:textSize="16sp" />
+            android:text="@string/emailTextView"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/userEmail"
@@ -48,9 +49,8 @@
             android:ems="10"
             android:gravity="bottom"
             android:inputType="textEmailAddress"
-            android:paddingLeft="5dp"
-            android:paddingBottom="3dp"
-            android:textSize="20sp" />
+            android:padding="3dp"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/emailErrorMessage"
@@ -64,8 +64,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
-            android:text="Password"
-            android:textSize="16sp" />
+            android:text="@string/passwordTextView"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/userPassword"
@@ -75,10 +76,9 @@
             android:ems="10"
             android:gravity="bottom"
             android:inputType="textPassword"
-            android:paddingLeft="5dp"
-            app:passwordToggleEnabled="true"
-            android:paddingBottom="3dp"
-            android:textSize="20sp" />
+            android:padding="3dp"
+            android:textSize="24sp"
+            app:passwordToggleEnabled="true" />
 
         <TextView
             android:id="@+id/passwordErrorMessage"
@@ -93,6 +93,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="64dp"
+        android:contentDescription="@string/Hello"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -105,7 +106,7 @@
         android:backgroundTint="@color/buttonColor"
         android:onClick="goToUserCentralPage"
         android:text="Log In"
-        android:textColor="@color/white"
+        android:textColor="@color/buttonTextColor"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

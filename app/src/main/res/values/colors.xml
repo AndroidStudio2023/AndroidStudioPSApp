@@ -13,4 +13,5 @@
     <color name="PrimariesColor">#66d9ff</color>
     <color name="errorColor">#FF0000</color>
     <color name="tableHeaderColor">#2196F3</color>
+    <color name="buttonTextColor">#fafafa</color>
 </resources>

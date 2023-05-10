@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Όνομα:"
+            android:text="@string/clinicNameHeader"
             android:textSize="20sp" />
 
         <EditText
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Διεύθυνση:"
+            android:text="@string/clinicAddressHeader"
             android:textSize="20sp" />
 
         <EditText
@@ -75,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Α.Φ.Μ:"
+            android:text="@string/clinicAFMHeader"
             android:textSize="20sp" />
 
         <EditText
@@ -112,9 +112,10 @@
         android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Νέο Φυσικοθεραπευτήριο"
+        android:text="@string/addClincPageHeader"
         android:textColor="@color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,8 +127,9 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/buttonColor"
         android:onClick="CreateNewPS"
-        android:text="Δημιουργία +"
+        android:text="@string/createTextButton"
         android:textColor="@color/white"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

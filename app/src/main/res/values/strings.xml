@@ -2,9 +2,31 @@
     <string name="app_name">PhysiotherapyCenterApplication</string>
 
     <!--Texts-->
+    <string name="mainPageTitle">Κεντρική Σελίδα</string>
+    <string name="choiseButtonText">ΕΠΙΛΟΓΗ</string>
+    <!--By Denesidis-->
     <string name="Hello">Καλώς Ήρθατε!</string>
     <string name="descriptionMessage">Η ακόλουθη εφαρμογή αποτελεί:\nΈνα σύστημα διαχείρισης\nφυσικοθεραπευτηρίου, \nτο οποίο είναι διαθέσιμο για όλα\n τα μέλη του ΠΣΦ.</string>
     <string name="linkp1">Μάθετε περισσότερα</string>
+    <string name="LoginPSFButtonName">ΠΣΦ</string>
+    <string name="LoginPhysiotherapistButtonName">ΦΥΣΙΚΟΘΕΡΑΠΕΥΤΗΣ</string>
+    <string name="LoginPatientButtonName">ΑΣΘΕΝΗΣ</string>
+    <string name="emailTextView">email</string>
+    <string name="passwordTextView">password</string>
+    <string name="clinicsCentralPageHeader">Κεντρική Σελίδα Φυσικοθεραπευτηρίων</string>
+    <string name="clinicsTableHeaderCentralPage">Φυσικοθεραπευτήρια</string>
+    <string name="addClincPageHeader">Νέο Φυσικοθεραπευτήριο</string>
+    <string name="createTextButton">Δημιουργία +</string>
+    <string name="clinicNameHeader">Όνομα</string>
+    <string name="clinicAddressHeader">Διεύθυνση</string>
+    <string name="clinicAFMHeader">Α.Φ.Μ</string>
+    <string name="newClinicButtonText">Νέο Φυσικοθεραπευτήριο +</string>
+
+    <string name="servicesTableHeaderCentralPage">Υπηρεσίες/Παροχές</string>
+    <string name="newServiceButtonText">Νέα Παροχή +</string>
+    <string name="addServiceNameHeader">Νέα Παροχή</string>
+
+    <!--By Diskos-->
     <string name="patient">Νέος Ασθενής</string>
     <string name="patientdescriptionMessage">Εισάγετε τα στοιχεία του ασθενή</string>
     <string name="maindoctorpage">Κεντρική Σελίδα</string>
