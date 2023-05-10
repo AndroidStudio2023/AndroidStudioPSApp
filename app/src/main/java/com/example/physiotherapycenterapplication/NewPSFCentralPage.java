@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import java.util.Objects;
+
 
 /**
  * NewPSFCentralPage
@@ -23,7 +25,7 @@ public class NewPSFCentralPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_psfcentral_page);
-        getSupportActionBar().setTitle("Central Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Central Page");
     }
 
     //Log Out function

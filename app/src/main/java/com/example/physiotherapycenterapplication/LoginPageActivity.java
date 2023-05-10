@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
-import android.widget.Toast;
+
 
 import com.example.physiotherapycenterapplication.R.id;
 
-import org.w3c.dom.Text;
+import java.util.Objects;
+
 
 public class LoginPageActivity extends AppCompatActivity {
 
@@ -23,11 +24,11 @@ public class LoginPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
         //Change Action Title
-        getSupportActionBar().setTitle("Login Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Login Page");
 
-        extras = getIntent().getExtras();//Arxikopoiisi Bundle extras
+        extras = getIntent().getExtras();//Bundle extras
         user = findViewById(R.id.userText);
-        typeUser = extras.getString("TypeUser");//Apothikeusi tis extra pliroforias
+        typeUser = extras.getString("TypeUser");//Save extra information
         //user.setText(typeUser);
 
 
@@ -42,13 +43,13 @@ public class LoginPageActivity extends AppCompatActivity {
         TextView wrongEmailMessage = findViewById(R.id.emailErrorMessage);
         TextView wrongPassMessage = findViewById(R.id.passwordErrorMessage);
         //Find and save email
-        EditText Email = findViewById(id.userEmail);
+        EditText Email = findViewById(R.id.userEmail);
         String userEmail = Email.getText().toString();
         //Find and save password
         EditText Password = findViewById(id.userPassword);
         String userPassword = Password.getText().toString();
 
-        //Elegxos dedomenwn xristi
+        //Control user's import data
         //!Pros to paron "uparxei" 1 xristis, o PSF
 
         correctEmail = checkEmail(typeUser,userEmail);
@@ -73,13 +74,13 @@ public class LoginPageActivity extends AppCompatActivity {
             wrongPassMessage.setText("");
         }
 
-        //Katharisma formas
+        //Clear form
         Email.setText("");
         Password.setText("");
 
         //3o senario: Swsta stoixeia
         if(correctEmail && correctPassword){
-            //Katharisma formas
+            //Clear form
             Email.setText("");
             Password.setText("");
             //Sundesi stin kentrikh selida PSF
