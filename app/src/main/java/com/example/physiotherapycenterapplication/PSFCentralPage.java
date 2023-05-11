@@ -20,7 +20,7 @@ public class PSFCentralPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_psfcentral_page);
         //Change Action Title
-        getSupportActionBar().setTitle("Central Physiotherapy Clinic Page");
+        getSupportActionBar().setTitle("Central Physiotherapy Clinics Page");
     }
 
 
@@ -35,5 +35,10 @@ public class PSFCentralPage extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
         //intent.putExtra("TypeUser","ΠΣΦ");
         startActivity(intent);
+    }
+
+    //Block back button
+    public void onBackPressed() {
+        // do nothing.
     }
 }

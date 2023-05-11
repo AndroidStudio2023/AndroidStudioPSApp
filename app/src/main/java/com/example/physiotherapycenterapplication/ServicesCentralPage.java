@@ -12,6 +12,7 @@ public class ServicesCentralPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_central_page);
+        getSupportActionBar().setTitle("Central Physiotherapy Clinics Page");
     }
 
     public void moveToCreateServicePage(View view){
@@ -22,5 +23,10 @@ public class ServicesCentralPage extends AppCompatActivity {
     public void moveToCentralPage(View view){
         Intent intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
         startActivity(intent);
+    }
+
+    //Block back button
+    public void onBackPressed() {
+        // do nothing.
     }
 }

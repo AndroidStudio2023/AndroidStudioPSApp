@@ -83,4 +83,9 @@ public class NewPSFCentralPage extends AppCompatActivity {
 
 
     }
+
+    //Block back button
+    public void onBackPressed() {
+        // do nothing.
+    }
 }

@@ -10,5 +10,6 @@ public class CreateServicePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_service_page);
+        getSupportActionBar().setTitle("Add New Service Page");
     }
 }

@@ -16,7 +16,7 @@ public class CreatePSPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_pspage);
         //Change Action Title
-        getSupportActionBar().setTitle("Add Physiotherapy Center Page");
+        getSupportActionBar().setTitle("Add New Physiotherapy Page");
     }
 
     public void CreateNewPS(View view){
