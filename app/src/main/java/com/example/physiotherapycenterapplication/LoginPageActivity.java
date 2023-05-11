@@ -109,4 +109,16 @@ public class LoginPageActivity extends AppCompatActivity {
             return false;
         }
     }
+
+    //Go FirstPage Function
+
+    public void goFirstPage(View view){
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+    }
+
+    //Block Back Button
+    public void onBackPressed() {
+        // do nothing.
+    }
 }
