@@ -3,14 +3,18 @@ package com.example.physiotherapycenterapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
+import android.widget.Toast;
 
 
 import com.example.physiotherapycenterapplication.R.id;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -34,80 +38,89 @@ public class LoginPageActivity extends AppCompatActivity {
 
     }
 
-    public void goToUserCentralPage(View view){
+    public void onClickLoginButton(View view){
 
-        EditText someField;
-        //"Keys" variables
-        boolean correctEmail,correctPassword;
-        //Find and Save ErrorMessages
-        TextView wrongEmailMessage = findViewById(R.id.emailErrorMessage);
-        TextView wrongPassMessage = findViewById(R.id.passwordErrorMessage);
-        //Find and save email
-        EditText Email = findViewById(R.id.userEmail);
-        String userEmail = Email.getText().toString();
-        //Find and save password
-        EditText Password = findViewById(id.userPassword);
-        String userPassword = Password.getText().toString();
-
-        //Control user's import data
-        //!Pros to paron "uparxei" 1 xristis, o PSF
-
-        correctEmail = checkEmail(typeUser,userEmail);
-        correctPassword = checkPassword(typeUser,userPassword);
-        //1o senario: Lathos email
-        someField = findViewById(id.userEmail);
-        if(!correctEmail){
-            someField.setBackground(getResources().getDrawable(R.drawable.error_textfileds_border));
-            wrongEmailMessage.setText("! Email is incorrect or empty");
-        }else{
-            someField.setBackground(getResources().getDrawable(R.drawable.normal_textfileds_border));
-            wrongEmailMessage.setText("");
-        }
-
-        //2o senario: Lathos paswword
-        someField = findViewById(id.userPassword);
-        if(!correctPassword){
-            someField.setBackground(getResources().getDrawable(R.drawable.error_textfileds_border));
-            wrongPassMessage.setText("! Password is incorrect or empty");
-        }else{
-            someField.setBackground(getResources().getDrawable(R.drawable.normal_textfileds_border));
-            wrongPassMessage.setText("");
-        }
+        //Get imported data
+        EditText userEmail = findViewById(id.userEmail);
+        EditText userPassword = findViewById(id.userPassword);
+        String email = userEmail.getText().toString();
+        String password = userPassword.getText().toString();
 
         //Clear form
-        Email.setText("");
-        Password.setText("");
+        closeErrors();
+        //call goToUserCentralPage
+        try{
+            goToUserCentralPage(email,password);
 
-        //3o senario: Swsta stoixeia
-        if(correctEmail && correctPassword){
-            //Clear form
-            Email.setText("");
-            Password.setText("");
-            //Sundesi stin kentrikh selida PSF
-            Intent intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
-            startActivity(intent);
-        }
-
-
-
-    }
-
-    public boolean checkEmail(String type,String email){
-
-        if(type.equals("ΠΣΦ") && email.equals("psf@gmail.com")){
-            return true;
-        }else{
-            return false;
+        }catch (Exception e){
+            System.out.println("========================ERROR call gotToUserCentralPage==============================\n");
+            e.printStackTrace();
         }
 
     }
+    public void goToUserCentralPage(String email,String password) throws IOException {
+        //Create url (parse the email,password and typeUser with GET method)
+        String url = "http://10.0.2.2/AndroidStudioProviders/findUser.php?email="+email+"&password="+password+"&type="+typeUser;
+        //Search for user and save user data to userData ArrayList<String>
+        OkHttpMediator mediator = new OkHttpMediator();
 
-    public boolean checkPassword(String type, String password){
-        if(type.equals("ΠΣΦ") && password.equals("1234")){
-            return true;
+        ArrayList<String> userData = mediator.findUser(url);
+
+
+
+        //If not found user
+        if(userData.size()==0){
+            printErrors();
+            Toast.makeText(this, "User Not Found", Toast.LENGTH_SHORT).show();
         }else{
-            return false;
+            //If found user (userData.length>0)
+            Intent intent;
+            if(typeUser.equals("PSF")){
+                intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
+                intent.putExtra("userDataArrayList",userData);
+                startActivity(intent);
+            } else if (typeUser.equals("PHY")) {
+                Toast.makeText(this, "Coming Soon!!!", Toast.LENGTH_SHORT).show();
+            } else{
+                Toast.makeText(this, "Coming Soon!!!", Toast.LENGTH_SHORT).show();
+            }
+
         }
+
+    }
+    //Close "errors"
+    public void closeErrors(){
+        EditText emailField = findViewById(R.id.userEmail);
+        EditText passField = findViewById(R.id.userPassword);
+        TextView emailMessage = findViewById(id.emailErrorMessage);
+        TextView passMessage = findViewById(id.passwordErrorMessage);
+
+        //Make borders black
+        emailField.setBackground(getResources().getDrawable(R.drawable.normal_textfileds_border));
+        passField.setBackground(getResources().getDrawable(R.drawable.normal_textfileds_border));
+        //Clear entry data
+        emailField.setText("");
+        passField.setText("");
+        //Close error messages
+        emailMessage.setText("");
+        passMessage.setText("");
+    }
+    //Print "errors"
+    public void printErrors(){
+        EditText emailField = findViewById(R.id.userEmail);
+        EditText passField = findViewById(R.id.userPassword);
+        TextView emailMessage = findViewById(id.emailErrorMessage);
+        TextView passMessage = findViewById(id.passwordErrorMessage);
+
+        //Make borders red
+        emailField.setBackground(getResources().getDrawable(R.drawable.error_textfileds_border));
+        passField.setBackground(getResources().getDrawable(R.drawable.error_textfileds_border));
+        //Clear entry data
+        emailField.setText("");
+        passField.setText("");
+        //Print error messages
+        emailMessage.setText("Email maybe is Wrong or Empty!");
+        passMessage.setText("Password maybe is Wrong or Empty!");
     }
 
     //Go FirstPage Function

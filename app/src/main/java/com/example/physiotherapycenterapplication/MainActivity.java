@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Get user type (PSF, Physiotherapist, Patient)
         login = (Button)view;
-        userType = login.getText().toString();
+        userType = getUserTypeCode(login.getText().toString());
 
         //Move to Login Page Intent code
 
@@ -35,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
         //intent.putExtra(key,value):To move the userType to Login Page
         intent.putExtra("TypeUser",userType);
         startActivity(intent);
+    }
+
+    public String getUserTypeCode(String text){
+        String code = "PSF";
+
+        if(text.equals("ΦΥΣΙΚΟΘΕΡΑΠΕΥΤΗΣ")){
+            code = "PHY";
+        } else if (text.equals("ΑΣΘΕΝΗΣ")) {
+            code = "PAT";
+        }
+
+        return code;
     }
 
 

@@ -8,7 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -21,17 +23,23 @@ import java.util.Objects;
 
 public class NewPSFCentralPage extends AppCompatActivity {
 
+    ArrayList<String> userData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_psfcentral_page);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Central Page");
+        //Print Welcome toast
+        Bundle extras = getIntent().getExtras();
+        userData = extras.getStringArrayList("userDataArrayList");
+        String userName = userData.get(1);
+        Toast.makeText(this, "Welcome sr/ms "+userName, Toast.LENGTH_SHORT).show();
     }
 
     //Log Out function
     public void LogOut(View view){
         Intent intent = new Intent(getApplicationContext(),LoginPageActivity.class);
-        intent.putExtra("TypeUser","ΠΣΦ");
+        intent.putExtra("TypeUser","PSF");
         startActivity(intent);
     }
 
@@ -45,9 +53,11 @@ public class NewPSFCentralPage extends AppCompatActivity {
         //If view (selected button) is button from left column
         if(view.equals(leftColumnButton)){
             intent = new Intent(getApplicationContext(),PSFCentralPage.class);
+            intent.putExtra("userDataArrayList",userData);
             startActivity(intent);
         }else{
             intent = new Intent(getApplicationContext(),ServicesCentralPage.class);
+            intent.putExtra("userDataArrayList",userData);
             startActivity(intent);
         }
     }

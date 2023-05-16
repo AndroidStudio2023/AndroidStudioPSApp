@@ -104,7 +104,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/buttonColor"
-        android:onClick="goToUserCentralPage"
+        android:onClick="onClickLoginButton"
         android:text="Log In"
         android:textColor="@color/buttonTextColor"
         android:textSize="16sp"

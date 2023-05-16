@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PhysiotherapyCenterApplication</string>
-
+    <string name="new_app_name">Φυσικοθεραπευτήριο AndroidStudio2023</string>
     <!--Texts-->
     <string name="mainPageTitle">Κεντρική Σελίδα</string>
     <string name="choiseButtonText">ΕΠΙΛΟΓΗ</string>

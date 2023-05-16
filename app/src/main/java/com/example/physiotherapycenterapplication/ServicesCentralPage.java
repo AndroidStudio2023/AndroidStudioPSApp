@@ -6,13 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class ServicesCentralPage extends AppCompatActivity {
 
+    ArrayList<String> userData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_central_page);
         getSupportActionBar().setTitle("Central Physiotherapy Clinics Page");
+        Bundle extras = getIntent().getExtras();
+        userData = extras.getStringArrayList("userDataArrayList");
     }
 
     public void moveToCreateServicePage(View view){
@@ -22,6 +27,7 @@ public class ServicesCentralPage extends AppCompatActivity {
 
     public void moveToCentralPage(View view){
         Intent intent = new Intent(getApplicationContext(),NewPSFCentralPage.class);
+        intent.putExtra("userDataArrayList",userData);
         startActivity(intent);
     }
 
