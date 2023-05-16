@@ -80,7 +80,9 @@ public class LoginPageActivity extends AppCompatActivity {
                 intent.putExtra("userDataArrayList",userData);
                 startActivity(intent);
             } else if (typeUser.equals("PHY")) {
-                Toast.makeText(this, "Coming Soon!!!", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(),main_doctor_page.class);
+                intent.putExtra("userDataArrayList",userData);
+                startActivity(intent);
             } else{
                 Toast.makeText(this, "Coming Soon!!!", Toast.LENGTH_SHORT).show();
             }
