@@ -38,7 +38,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Όνομα:"
-        android:textSize="26sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView34" />
 
@@ -49,7 +49,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Κωδικός:"
-        android:textSize="26sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView35" />
 
@@ -60,7 +60,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Κόστος\nΣυνεδρίας:"
-        android:textSize="26sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView36" />
 
@@ -71,7 +71,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:text="Περιγραφή:"
-        android:textSize="26sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
@@ -98,6 +98,7 @@
         android:padding="3dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView35"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toEndOf="@+id/textView35"
         app:layout_constraintTop_toTopOf="@+id/textView35" />
 

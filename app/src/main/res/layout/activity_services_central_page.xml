@@ -54,7 +54,7 @@
                 android:text="Κωδ."
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/nameServiceCol"
@@ -67,7 +67,7 @@
                 android:text="Όνομα"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/descriptionServiceCol"
@@ -80,7 +80,7 @@
                 android:text="Περιγραφή"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/costServiceCol"
@@ -93,7 +93,7 @@
                 android:text="Κόστος"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
         </TableRow>
 
         <TableRow

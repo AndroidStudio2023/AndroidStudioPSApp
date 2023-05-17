@@ -14,32 +14,28 @@
             android:id="@+id/textView29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="428dp"
+            android:layout_marginTop="32dp"
             android:text="@string/welcomedoctor"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView40"
-            app:layout_constraintVertical_bias="0.069" />
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:layout_marginBottom="484dp"
             android:text="@string/maindoctorpage"
             android:textColor="@color/black"
             android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -54,30 +50,35 @@
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="154dp"
+            android:layout_width="163dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/buttonColor"
-            android:text="Ασθενής"
+            android:text="Ασθενείς"
+            app:layout_constraintBottom_toTopOf="@+id/button4"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="455dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="163dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/buttonColor"
             android:text="Ραντεβού"
-            tools:layout_editor_absoluteX="149dp"
-            tools:layout_editor_absoluteY="527dp" />
+            app:layout_constraintBottom_toTopOf="@+id/button5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="163dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="85dp"
             android:backgroundTint="@color/buttonColor"
-            android:text="Νέος Ασθενής"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="607dp" />
+            android:text="Νέος Ασθενής +"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

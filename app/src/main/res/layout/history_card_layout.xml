@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- history_card_layout= This is an XML layout which will be
+treated as an item for the list created by the RecyclerView.-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:backgroundTint="@color/buttonColor"
+        app:cardCornerRadius="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/paroxi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Παροχή"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/paroxi"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="Ημερομηνία"
+                android:textColor="#E4DEDE"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

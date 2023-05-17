@@ -43,7 +43,7 @@
                 android:text="@string/clinicNameHeader"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -56,7 +56,7 @@
                 android:text="@string/clinicAddressHeader"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView10"
@@ -69,7 +69,7 @@
                 android:text="@string/clinicAFMHeader"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
         </TableRow>
 
@@ -98,7 +98,7 @@
                 android:background="@color/PrimariesColor"
                 android:paddingTop="7dp"
                 android:paddingBottom="7dp"
-                android:text="Αγγελάκι,21"
+                android:text="Αγγελάκη, 21"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -271,12 +271,12 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="45dp"
         android:onClick="GoPreviousORNextPage"
         android:text="@string/clinicsCentralPageHeader"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -296,7 +296,7 @@
 
     <Button
         android:id="@+id/newPSButton"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/buttonColor"

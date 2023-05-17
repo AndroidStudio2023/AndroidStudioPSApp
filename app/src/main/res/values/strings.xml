@@ -11,8 +11,8 @@
     <string name="LoginPSFButtonName">ΠΣΦ</string>
     <string name="LoginPhysiotherapistButtonName">ΦΥΣΙΚΟΘΕΡΑΠΕΥΤΗΣ</string>
     <string name="LoginPatientButtonName">ΑΣΘΕΝΗΣ</string>
-    <string name="emailTextView">email</string>
-    <string name="passwordTextView">password</string>
+    <string name="emailTextView">Email</string>
+    <string name="passwordTextView">Password</string>
     <string name="clinicsCentralPageHeader">Κεντρική Σελίδα Φυσικοθεραπευτηρίων</string>
     <string name="clinicsTableHeaderCentralPage">Φυσικοθεραπευτήρια</string>
     <string name="addClincPageHeader">Νέο Φυσικοθεραπευτήριο</string>
@@ -28,9 +28,9 @@
 
     <!--By Diskos-->
     <string name="patient">Νέος Ασθενής</string>
-    <string name="patientdescriptionMessage">Εισάγετε τα στοιχεία του ασθενή</string>
+    <string name="patientdescriptionMessage">Εισάγετε τα στοιχεία του ασθενή:</string>
     <string name="maindoctorpage">Κεντρική Σελίδα</string>
-    <string name="welcomedoctor">Καλός ορίσατε </string>
+    <string name="welcomedoctor">Καλώς Ορίσατε </string>
 
     <!--IDs-->
     <!--Strings Arrays-->
