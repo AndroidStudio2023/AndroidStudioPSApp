@@ -8,7 +8,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <TextView
             android:id="@+id/textView29"
@@ -28,14 +30,12 @@
             android:id="@+id/textView23"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:text="@string/maindoctorpage"
             android:textColor="@color/black"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            tools:layout_editor_absoluteY="180dp" />
 
         <ImageView
             android:id="@+id/imageView5"
@@ -52,29 +52,29 @@
             android:id="@+id/button3"
             android:layout_width="163dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="172dp"
             android:backgroundTint="@color/buttonColor"
             android:text="Ασθενείς"
-            app:layout_constraintBottom_toTopOf="@+id/button4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="163dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="16dp"
             android:backgroundTint="@color/buttonColor"
             android:text="Ραντεβού"
             app:layout_constraintBottom_toTopOf="@+id/button5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="163dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="85dp"
+            android:layout_marginBottom="84dp"
             android:backgroundTint="@color/buttonColor"
             android:text="Νέος Ασθενής +"
             app:layout_constraintBottom_toBottomOf="parent"
