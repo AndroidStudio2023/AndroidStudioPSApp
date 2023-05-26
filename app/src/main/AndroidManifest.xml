@@ -21,6 +21,18 @@
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
+        <activity
+            android:name=".PatientPagePopUp"
+            android:exported="false"
+            />
+        <activity
+            android:name=".MyDate"
+            android:exported="false"
+            android:parentActivityName=".MainPatient"
+            />
+        <activity
+            android:name=".MainPatient"
+            android:exported="true"/>
 
         <activity
             android:name=".CreateServicePage"
