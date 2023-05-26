@@ -3,7 +3,6 @@ package com.example.physiotherapycenterapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -41,8 +40,8 @@ public class LoginPageActivity extends AppCompatActivity {
     public void onClickLoginButton(View view){
 
         //Get imported data
-        EditText userEmail = findViewById(id.userEmail);
-        EditText userPassword = findViewById(id.userPassword);
+        EditText userEmail = findViewById(id.nameInput);
+        EditText userPassword = findViewById(id.adressInput);
         String email = userEmail.getText().toString();
         String password = userPassword.getText().toString();
 
@@ -92,8 +91,8 @@ public class LoginPageActivity extends AppCompatActivity {
     }
     //Close "errors"
     public void closeErrors(){
-        EditText emailField = findViewById(R.id.userEmail);
-        EditText passField = findViewById(R.id.userPassword);
+        EditText emailField = findViewById(R.id.nameInput);
+        EditText passField = findViewById(R.id.adressInput);
         TextView emailMessage = findViewById(id.emailErrorMessage);
         TextView passMessage = findViewById(id.passwordErrorMessage);
 
@@ -109,8 +108,8 @@ public class LoginPageActivity extends AppCompatActivity {
     }
     //Print "errors"
     public void printErrors(){
-        EditText emailField = findViewById(R.id.userEmail);
-        EditText passField = findViewById(R.id.userPassword);
+        EditText emailField = findViewById(R.id.nameInput);
+        EditText passField = findViewById(R.id.adressInput);
         TextView emailMessage = findViewById(id.emailErrorMessage);
         TextView passMessage = findViewById(id.passwordErrorMessage);
 

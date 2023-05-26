@@ -12,6 +12,9 @@ import android.view.View;
 
 public class main_doctor_page extends AppCompatActivity {
 
+
+
+
     public Button buttona;
     public Button buttonb;
     @Override
@@ -31,12 +34,14 @@ public class main_doctor_page extends AppCompatActivity {
             }
         });
 
-        buttonb.setOnClickListener(new View.OnClickListener() {
+        /*buttonb.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-               // Intent intent = new  Intent(main_doctor_page.this,)
+           // public void onClick(View view) {
+                Intent intent = new  Intent(main_doctor_page.this,)
             }
-        });
+        });*/
+
+
     }
 
 
