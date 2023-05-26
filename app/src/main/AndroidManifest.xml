@@ -32,8 +32,9 @@
             />
         <activity
             android:name=".MainPatient"
-            android:exported="true"/>
-
+            android:exported="true"
+            android:parentActivityName=".LoginPageActivity"
+            />
         <activity
             android:name=".CreateServicePage"
             android:exported="false" />
