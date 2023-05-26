@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main_doctor_page"
-    android:background="#7d000000"
+    android:background="@color/backgroundColor"
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical" >
 
