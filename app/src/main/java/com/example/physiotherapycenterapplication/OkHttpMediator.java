@@ -5,9 +5,11 @@ import android.os.StrictMode;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONStringer;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import okhttp3.MediaType;
@@ -23,6 +25,7 @@ public class OkHttpMediator {
         StrictMode.setThreadPolicy(policy);
     }
 
+    //Check login data and find user on system (if imported data are correct)
     public ArrayList<String> findUser(String url) throws IOException {
         //Array List with user data (userID,userName and clinicsData for physiotherapistUser)
         ArrayList<String> userData = new ArrayList<>();
@@ -56,5 +59,76 @@ public class OkHttpMediator {
         }
 
         return userData;
+    }
+
+    //Returns all clinics
+    //On view: Key(String)<->ClinicData(ArrayList<String>)
+    public HashMap<Integer,ArrayList<String>> getClinicsData(String url) throws Exception{
+        HashMap<Integer,ArrayList<String>> clinics = new HashMap<>();
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        try {
+
+            JSONArray clinicsObject = new JSONArray(data);
+           for(int i=0; i<clinicsObject.length(); i++){
+               ArrayList<String> cData = new ArrayList<>();//Returned HashMap value/data
+               //Get current clinic's data as JSONObject
+               JSONArray aClinic = (JSONArray) clinicsObject.get(i);
+               cData.add(aClinic.getString(0));
+               cData.add(aClinic.getString(1));
+               cData.add(aClinic.getString(2));
+                //Put clinic to HashMap, i=key
+                clinics.put(i,cData);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return clinics;
+    }
+
+    //Get physicotherapists/clinics OR Services number
+    public String getClinicsNumber(String url) throws Exception{
+        String clinicsORservices= "0" ;
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        clinicsORservices = data;
+        return  clinicsORservices;
+    }
+
+    //Check data for new Clinic and Physicotherapist
+    //return ArrayList<boolean>
+    public ArrayList<Boolean> checkDataOfNewClinicAndDoctor(String url) throws Exception{
+        ArrayList<Boolean> corrects = new ArrayList<>();
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        try{
+            JSONArray returnData = new JSONArray(data);
+            for(int i=0; i<returnData.length(); i++){
+                corrects.add(returnData.getBoolean(i));
+            }
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        return corrects;
     }
 }

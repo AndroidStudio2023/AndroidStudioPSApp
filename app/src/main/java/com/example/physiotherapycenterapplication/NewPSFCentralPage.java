@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Objects;
 
 
@@ -33,7 +34,49 @@ public class NewPSFCentralPage extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         userData = extras.getStringArrayList("userDataArrayList");
         String userName = userData.get(1);
-        Toast.makeText(this, "Welcome sr/ms "+userName, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome Back sr/ms "+userName, Toast.LENGTH_SHORT).show();
+
+        //Show services and clinics/doctors numbers
+        showNumbers();
+
+    }
+
+    public void showNumbers() {
+        OkHttpMediator mediator = new OkHttpMediator();
+        String url;
+        String cNumber= "0";
+        String servNumber = "0";
+
+        //Get data from server
+        url = "http://10.0.2.2/AndroidStudioProviders/getPhysicotherapistsNumber.php";
+        try{
+            cNumber = mediator.getClinicsNumber(url);
+            //Toast.makeText(this, cNumber, Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        url = "http://10.0.2.2/AndroidStudioProviders/getServicesNumber.php";
+        try{
+            servNumber = mediator.getClinicsNumber(url);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        //Clear text number for ""
+        cNumber = clearTextNumber(cNumber);
+        servNumber = clearTextNumber(servNumber);
+
+        //Show data
+        TextView clinics = findViewById(R.id.physNumber);
+        clinics.setText(cNumber);
+        TextView services = findViewById(R.id.servNumber);
+        services.setText(servNumber);
+    }
+
+    public String clearTextNumber(String cNumber) {
+        String characthers[] = cNumber.split("\"");
+        //Toast.makeText(this, characthers[0]+" "+characthers[1], Toast.LENGTH_SHORT).show();
+        return  characthers[1];
     }
 
     //Log Out function
@@ -93,6 +136,7 @@ public class NewPSFCentralPage extends AppCompatActivity {
 
 
     }
+
 
     //Block back button
     public void onBackPressed() {

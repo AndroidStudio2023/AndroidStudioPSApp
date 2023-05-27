@@ -83,7 +83,9 @@ public class LoginPageActivity extends AppCompatActivity {
                 intent.putExtra("userDataArrayList",userData);
                 startActivity(intent);
             } else{
-                Toast.makeText(this, "Coming Soon!!!", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(),PatientPagePopUp.class);
+                intent.putExtra("userDataArrayList",userData);
+                startActivity(intent);
             }
 
         }

@@ -10,12 +10,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class PatientPagePopUp extends AppCompatActivity {
     //public Button button1;
     public Button button2;
     TextView closePopUp;
     Button openPopUp;
     LinearLayout popUp;
+    ArrayList<String> userData;//For save user Data
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,17 @@ public class PatientPagePopUp extends AppCompatActivity {
         getSupportActionBar().setTitle("Αρχική Σελίδα");
 
         button2 = (Button) findViewById(R.id.date_button);
+
+        //Get Patient Data (AMKA & NAME)
+        Bundle patData = getIntent().getExtras();
+        userData = patData.getStringArrayList("userDataArrayList");
+
+        //Χρειάζεται ένας πάροχος που με βάση το Α.Μ.Κ.Α (1ο στοιχείο του userData)
+        //Να βρίσκει σε πιο ιατρείο ανήκει
+        //Ερώτημα αρχικά για τον πίνακα "patientsandclinicsconnection" για το ID του φυσικοθεραπευτή (physiotherapistID)
+        //Μετά με βάση το ID βρίσκει το φυσικοθεραπευτήριο από τον πίνακα "physiotherapyclinics"
+
+
 
         /*button1 = (Button) findViewById(R.id.eco_button);
         button1.setOnClickListener(new View.OnClickListener() {
