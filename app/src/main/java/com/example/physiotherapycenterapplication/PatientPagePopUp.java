@@ -18,7 +18,7 @@ public class PatientPagePopUp extends AppCompatActivity {
     TextView closePopUp;
     Button openPopUp;
     LinearLayout popUp;
-    ArrayList<String> userData;//For save user Data
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +29,6 @@ public class PatientPagePopUp extends AppCompatActivity {
 
         button2 = (Button) findViewById(R.id.date_button);
 
-        //Get Patient Data (AMKA & NAME)
-        Bundle patData = getIntent().getExtras();
-        userData = patData.getStringArrayList("userDataArrayList");
-
-        //Χρειάζεται ένας πάροχος που με βάση το Α.Μ.Κ.Α (1ο στοιχείο του userData)
-        //Να βρίσκει σε πιο ιατρείο ανήκει
-        //Ερώτημα αρχικά για τον πίνακα "patientsandclinicsconnection" για το ID του φυσικοθεραπευτή (physiotherapistID)
-        //Μετά με βάση το ID βρίσκει το φυσικοθεραπευτήριο από τον πίνακα "physiotherapyclinics"
 
 
 

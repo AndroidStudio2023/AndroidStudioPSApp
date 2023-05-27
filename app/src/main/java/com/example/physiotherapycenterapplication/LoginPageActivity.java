@@ -83,7 +83,7 @@ public class LoginPageActivity extends AppCompatActivity {
                 intent.putExtra("userDataArrayList",userData);
                 startActivity(intent);
             } else{
-                intent = new Intent(getApplicationContext(),PatientPagePopUp.class);
+                intent = new Intent(getApplicationContext(),MainPatient.class);
                 intent.putExtra("userDataArrayList",userData);
                 startActivity(intent);
             }
