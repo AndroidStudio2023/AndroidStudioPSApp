@@ -24,6 +24,7 @@ public class main_doctor_page extends AppCompatActivity {
 
         buttona = (Button) findViewById(R.id.button5);
         buttonb = (Button) findViewById(R.id.button4);
+        //χρειαζομαι τουλαχιστον την αναζητηση των ασθενων για να συνδεσω το κουμπι "Ασθενεις"
 
 
         buttona.setOnClickListener(new View.OnClickListener() {
@@ -34,12 +35,7 @@ public class main_doctor_page extends AppCompatActivity {
             }
         });
 
-        /*buttonb.setOnClickListener(new View.OnClickListener() {
-            @Override
-           // public void onClick(View view) {
-                Intent intent = new  Intent(main_doctor_page.this,)
-            }
-        });*/
+
 
 
     }
