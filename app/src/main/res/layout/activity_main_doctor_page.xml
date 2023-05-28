@@ -13,8 +13,55 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="36dp">
+
+        <LinearLayout
+            android:id="@+id/popUpArea"
+            android:layout_width="286dp"
+            android:layout_height="169dp"
+            android:layout_gravity="center"
+            android:background="@drawable/mockup_bolder"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:text="Αιτήσεις"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/popupMess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:text="Έχτε νέα αιτήματα"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/okTextView"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/mockup_textview_bolder"
+                android:padding="5dp"
+                android:text="Εντάξει"
+                android:textAlignment="center"
+                android:textColor="#03A9F4"
+                android:textSize="24sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView29"
