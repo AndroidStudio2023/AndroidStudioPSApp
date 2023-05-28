@@ -61,7 +61,7 @@ public class OkHttpMediator {
         return userData;
     }
 
-    //Returns all clinics
+    //Returns all clinics OR clinics from search
     //On view: Key(String)<->ClinicData(ArrayList<String>)
     public HashMap<Integer,ArrayList<String>> getClinicsData(String url) throws Exception{
         HashMap<Integer,ArrayList<String>> clinics = new HashMap<>();

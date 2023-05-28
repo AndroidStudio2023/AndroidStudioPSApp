@@ -35,6 +35,7 @@
     <!--IDs-->
     <!--Strings Arrays-->
     <string-array name="searchPSFsChoises">
+        <item>Όλα</item>
         <item>Α.Φ.Μ</item>
         <item>Όνομα</item>
         <item>Διέυθυνση</item>

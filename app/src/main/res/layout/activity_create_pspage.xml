@@ -73,7 +73,6 @@
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:onClick="selectTextField"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
 

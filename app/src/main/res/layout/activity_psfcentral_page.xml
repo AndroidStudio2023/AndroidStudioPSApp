@@ -151,13 +151,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clinicsTable" />
+         />
 
     <ImageButton
         android:id="@+id/searchPSFButton"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:background="@drawable/normal_textfileds_border"
+        android:onClick="onClickSearchButton"
         android:padding="5dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="@+id/searchPSFFiled"
