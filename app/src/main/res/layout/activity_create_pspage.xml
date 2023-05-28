@@ -124,7 +124,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
 

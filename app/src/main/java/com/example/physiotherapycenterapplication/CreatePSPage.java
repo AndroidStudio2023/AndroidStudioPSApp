@@ -67,7 +67,7 @@ public class CreatePSPage extends AppCompatActivity {
 
     }
 
-    public boolean checkForEmptyData(String clinicName,String clinicAddress,String clinicAFM,String docName,String docID,String docEmail, String docPass){
+    public boolean checkForEmptyData(String clinicName,String clinicAddress,String clinicAFM,String docName,String docEmail, String docPass,String docID){
 
         //Error Message TextView
         TextView aError;
@@ -143,7 +143,7 @@ public class CreatePSPage extends AppCompatActivity {
         }
     }
 
-    public void checkForCorrectData(String clinicName,String clinicAddress,String clinicAFM,String docName,String docID,String docEmail, String docPass){
+    public void checkForCorrectData(String clinicName,String clinicAddress,String clinicAFM,String docName,String docEmail, String docPass,String docID){
         OkHttpMediator mediator = new OkHttpMediator();
         String url = "http://10.0.2.2/AndroidStudioProviders//checkDataForNewClinic.php?docName="+docName+"&address="+clinicAddress+"&afm="+clinicAFM+"&docID="+docID+"&name="+clinicName+"&email="+docEmail+"&password="+docPass+"";
         try {
