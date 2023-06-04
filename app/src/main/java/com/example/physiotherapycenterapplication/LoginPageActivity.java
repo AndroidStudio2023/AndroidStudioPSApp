@@ -15,6 +15,9 @@ import com.example.physiotherapycenterapplication.R.id;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 
 
 public class LoginPageActivity extends AppCompatActivity {
@@ -62,7 +65,6 @@ public class LoginPageActivity extends AppCompatActivity {
         String url = "http://10.0.2.2/AndroidStudioProviders/findUser.php?email="+email+"&password="+password+"&type="+typeUser;
         //Search for user and save user data to userData ArrayList<String>
         OkHttpMediator mediator = new OkHttpMediator();
-
         ArrayList<String> userData = mediator.findUser(url);
 
 

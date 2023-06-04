@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
+    android:onClick="clearForm"
     tools:context=".CreatePSPage">
 
     <LinearLayout
@@ -38,7 +39,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="400dp">
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
@@ -261,6 +262,15 @@
 
             </LinearLayout>
         </ScrollView>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:onClick="clearForm"
+            android:text="Clear Form" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

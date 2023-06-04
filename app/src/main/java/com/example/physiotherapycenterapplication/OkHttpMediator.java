@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -32,6 +33,7 @@ public class OkHttpMediator {
         System.out.println("\n================URL===================\n");
         System.out.println(url);
         System.out.println("\n===================================\n");
+
         //Request
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
@@ -130,5 +132,21 @@ public class OkHttpMediator {
         }
 
         return corrects;
+    }
+
+    //Create new clinic and physicotherapist
+    //records in two tables
+    public String createNewPhysicotherapist(String url) throws Exception{
+        String data="fail";
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        data = response.body().string();
+        System.out.println("\n==========Create new dco============\n");
+        System.out.println(data);
+        System.out.println("\n======================\n");
+        return data;
     }
 }
