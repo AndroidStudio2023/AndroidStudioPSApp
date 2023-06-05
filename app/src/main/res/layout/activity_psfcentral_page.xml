@@ -105,7 +105,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/normal_textfileds_border"
         android:backgroundTintMode="add"
-        android:entries="@array/searchPSFsChoises"
+        android:entries="@array/searchPSFsChoices"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="@+id/searchPSFFiled"
         app:layout_constraintEnd_toEndOf="parent"

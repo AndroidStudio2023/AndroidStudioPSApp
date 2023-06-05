@@ -46,6 +46,8 @@ public class OkHttpMediator {
         //Import data to ArrayList
         try {
             JSONArray json = new JSONArray(data);
+//            JSONArray json_services = new JSONArray(data);
+//            JSONArray json_dates = new JSONArray(data);
             userData.add(json.getString(0));
             userData.add(json.getString(1));
             if(json.length()>2){
@@ -149,4 +151,37 @@ public class OkHttpMediator {
         System.out.println("\n======================\n");
         return data;
     }
+
+
+
+    //Return history data for selected patient
+    public ArrayList <String> patientHistory(String url) throws IOException {
+
+        ArrayList<String> history = new ArrayList<>();
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        //Import data from JSON array to history ArrayList
+        try {
+            JSONArray json = new JSONArray(data);
+
+            for (int i=0; i<json.length(); i++) {
+                history.add(json.getString(i));
+                System.out.println(json.getString(i));
+            }
+        }
+        catch (JSONException e) {
+            System.out.println("======================JSONError================================\n");
+            e.printStackTrace();
+        }
+
+        return history;
+    }
+
+
 }

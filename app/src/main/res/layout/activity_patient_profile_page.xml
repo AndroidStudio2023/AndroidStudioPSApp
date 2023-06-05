@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DCD6D6"
+    android:backgroundTint="@color/backgroundColor"
     tools:context=".PatientProfilePage">
 
     <Button
@@ -14,7 +15,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="@color/buttonColor"
-        android:text="+Επίσκεψη"
+        android:text="Επίσκεψη +"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -28,6 +29,7 @@
         android:layout_height="52dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/buttonColor"
+        android:onClick="goToHistoryPage"
         android:text="Ιστορικό Ασθενή"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,8 +124,8 @@
             android:layout_width="62dp"
             android:layout_height="match_parent"
             android:background="@color/buttonColor"
-            android:scaleType="fitCenter"
             android:contentDescription="back button"
+            android:scaleType="fitCenter"
             android:src="@drawable/_545435" />
 
         <ImageButton
@@ -153,11 +155,6 @@
 
 
     </RelativeLayout>
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

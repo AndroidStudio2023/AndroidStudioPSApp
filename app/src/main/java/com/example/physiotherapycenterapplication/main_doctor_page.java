@@ -7,12 +7,11 @@ import android.content.Intent;
 import android.widget.Button;
 import android.view.View;
 
-
+import java.io.IOException;
+import java.util.Objects;
 
 
 public class main_doctor_page extends AppCompatActivity {
-
-
 
 
     public Button buttona;
@@ -21,6 +20,7 @@ public class main_doctor_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_doctor_page);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Main Doctor Page");
 
         buttona = (Button) findViewById(R.id.button5);
         buttonb = (Button) findViewById(R.id.button4);
@@ -35,12 +35,13 @@ public class main_doctor_page extends AppCompatActivity {
             }
         });
 
-
-
-
     }
 
 
-
+    //Apo iwanna proswrino - gia thn metakinhsh sto page tou istorikou
+    public void goToHistoryPage(View view){
+        Intent intent = new Intent(getApplicationContext(), HistoryPage.class);
+        startActivity(intent);
+    }
 
 }

@@ -30,18 +30,18 @@
     <string name="patient">Νέος Ασθενής</string>
     <string name="patientdescriptionMessage">Εισάγετε τα στοιχεία του ασθενή:</string>
     <string name="maindoctorpage">Κεντρική Σελίδα</string>
-    <string name="welcomedoctor">Καλώς Ορίσατε </string>
+    <string name="welcomedoctor">Καλώς Ορίσατε! </string>
     <string name="popuptitle">Αιτήσεις </string>
-    <string name="popupmessage">Έχεται αναπάντητα αιτήματα!  Ενημερώστε τους ασθενείς εγκαίρως</string>
+    <string name="popupmessage">Έχετε αναπάντητα αιτήματα!  Ενημερώστε τους ασθενείς εγκαίρως</string>
 
 
 
     <!--IDs-->
     <!--Strings Arrays-->
-    <string-array name="searchPSFsChoises">
+    <string-array name="searchPSFsChoices">
         <item>Όλα</item>
         <item>Α.Φ.Μ</item>
         <item>Όνομα</item>
-        <item>Διέυθυνση</item>
+        <item>Διεύθυνση</item>
     </string-array>
 </resources>

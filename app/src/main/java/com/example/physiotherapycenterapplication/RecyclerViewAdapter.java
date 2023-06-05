@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -16,11 +17,19 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<HistoryViewHolder> {
 
-    List<HistoryData> list = Collections.emptyList();
+    List<String> listServices = Collections.emptyList();
+    List<String> listDates = Collections.emptyList();
     Context context;
 
-    public RecyclerViewAdapter(List<HistoryData> list, Context context){
-        this.list = list;
+    //gia allh ylopoihsh
+//    public RecyclerViewAdapter(List<HistoryData> list, Context context){
+//        this.list = list;
+//        this.context = context;
+//    }
+
+    public RecyclerViewAdapter(List<String> listServices, List<String> listDates, Context context){
+        this.listServices = listServices;
+        this.listDates = listDates;
         this.context = context;
     }
 
@@ -41,14 +50,18 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<HistoryViewHolder>
     @Override
     public void onBindViewHolder(final HistoryViewHolder viewHolder, final int position) {
         final int index = viewHolder.getAdapterPosition();
-        viewHolder.paroxi.setText(list.get(position).paroxi);
-        viewHolder.date.setText(list.get(position).date);
+        viewHolder.paroxi.setText(listServices.get(position));
+        viewHolder.date.setText(listDates.get(position));
+
+//gia allh ylopoihsh
+//        viewHolder.paroxi.setText(list.get(position).paroxi);
+//        viewHolder.date.setText(list.get(position).date);
     }
 
     //getItemCount: returns the length of the RecyclerView.
     @Override
     public int getItemCount() {
-        return list.size();
+        return listServices.size();
     }
 
     //onAttachedToRecyclerView: attaches the adapter to the RecyclerView.
