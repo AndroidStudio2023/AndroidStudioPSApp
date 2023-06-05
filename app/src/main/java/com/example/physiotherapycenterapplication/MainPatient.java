@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,8 +16,12 @@ import java.util.Date;
 public class MainPatient extends AppCompatActivity{
     //public Button button1;
     public Button button2;
+
     TextView closePopUp;
+
     Button openPopUp;
+
+    ImageButton imgButton;
     ArrayList<String> userData;//For save user Data
     @Override
     protected void onCreate(Bundle savedInstanceState) {

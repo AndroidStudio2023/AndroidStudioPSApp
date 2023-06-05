@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,8 +17,11 @@ public class PatientPagePopUp extends AppCompatActivity {
     //public Button button1;
     public Button button2;
     TextView closePopUp;
+
     Button openPopUp;
     LinearLayout popUp;
+
+    ImageButton imgButton;
 
 
     @Override
