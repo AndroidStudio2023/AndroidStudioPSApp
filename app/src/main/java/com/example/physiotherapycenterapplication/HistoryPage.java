@@ -25,7 +25,7 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_page);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("History Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Ιστορικό");
 
         List<String> list = new ArrayList<>();
 
