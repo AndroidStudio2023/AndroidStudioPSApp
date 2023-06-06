@@ -30,6 +30,14 @@ public class MainPatient extends AppCompatActivity{
         getSupportActionBar().setTitle("Αρχική Σελίδα");
         button2 = (Button) findViewById(R.id.date_button);
 
+        imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginPageActivity.class);
+                startActivity(intent);
+            }
+
+        });
         //Get Patient Data (AMKA & NAME)
         Bundle patData = getIntent().getExtras();
         userData = patData.getStringArrayList("userDataArrayList");
@@ -55,5 +63,8 @@ public class MainPatient extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+    }
+    public void onBackPressed(){
+
     }
 }
