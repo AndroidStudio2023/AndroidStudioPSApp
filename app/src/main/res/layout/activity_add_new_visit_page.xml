@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentStart="true"
+            android:background="@color/buttonColor"
+            android:scaleType="fitCenter"
+            android:src="@drawable/_545435" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginStart="-1dp"
+            android:layout_marginEnd="3dp"
+            android:layout_toStartOf="@id/imageButton2"
+            android:layout_toEndOf="@id/imageButton1"
+            android:background="@color/tableHeaderColor"
+            android:gravity="center"
+            android:text="Προσθήκη Επίσκεψης"
+            android:textColor="@color/white" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/buttonColor"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_delete" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:srcCompat="@drawable/appicon1" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="DATE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="NAME/AMKA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Επιλογή Ενεργειών Επίσκεψης"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="389dp"
+        android:layout_height="246dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:text="Αθλητική Μάλαξη"
+                app:layout_constraintBottom_toTopOf="@+id/checkbox2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:text="Ενδυνάμωση Κορμού"
+                app:layout_constraintBottom_toTopOf="@+id/checkbox3"
+                app:layout_constraintStart_toStartOf="@+id/checkbox1"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox1" />
+
+            <CheckBox
+                android:id="@+id/checkbox3"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:text="Ισοκινητικό Δυναμόμετρο"
+                app:layout_constraintBottom_toTopOf="@+id/checkbox4"
+                app:layout_constraintStart_toStartOf="@+id/checkbox2"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox2" />
+
+            <CheckBox
+                android:id="@+id/checkbox4"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:text="Μυοχαλαρωτικό Μασάζ"
+                app:layout_constraintBottom_toTopOf="@+id/checkbox5"
+                app:layout_constraintStart_toStartOf="@+id/checkbox3"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox3" />
+
+            <CheckBox
+                android:id="@+id/checkbox5"
+                android:layout_width="211dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Πρεσσοθεραπεία"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintStart_toStartOf="@+id/checkbox4"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox4" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Προσθήκη Επίσκεψης"
+        android:textColor="@color/buttonTextColor"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
