@@ -23,8 +23,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,16 +39,17 @@
             android:layout_marginBottom="10dp"
             android:text="@string/emailTextView"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/nameInput"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:background="@drawable/normal_textfileds_border"
             android:backgroundTint="@null"
             android:ems="10"
             android:gravity="bottom"
+            android:hint="τελειώνει σε '@gmail.com'"
             android:inputType="textEmailAddress"
             android:padding="3dp"
             android:textSize="24sp" />
@@ -56,7 +58,8 @@
             android:id="@+id/emailErrorMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/errorColor" />
+            android:textColor="@color/errorColor"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -66,15 +69,16 @@
             android:layout_marginBottom="10dp"
             android:text="@string/passwordTextView"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/adressInput"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="45dp"
             android:background="@drawable/normal_textfileds_border"
             android:ems="10"
             android:gravity="bottom"
+            android:hint="κωδικός πρόσβασης"
             android:inputType="textPassword"
             android:padding="3dp"
             android:textSize="24sp"
@@ -84,7 +88,8 @@
             android:id="@+id/passwordErrorMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/errorColor" />
+            android:textColor="@color/errorColor"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

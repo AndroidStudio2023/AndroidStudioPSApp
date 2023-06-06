@@ -29,12 +29,12 @@ public class NewPSFCentralPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_psfcentral_page);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Central Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Κεντρική Σελίδα ΠΣΦ");
         //Print Welcome toast
         Bundle extras = getIntent().getExtras();
         userData = extras.getStringArrayList("userDataArrayList");
         String userName = userData.get(1);
-        Toast.makeText(this, "Welcome Back sr/ms "+userName, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Καλωσήρθατε κ."+userName, Toast.LENGTH_SHORT).show();
 
         //Show services and clinics/doctors numbers
         showNumbers();

@@ -24,7 +24,7 @@ public class CreatePSPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_pspage);
         //Change Action Title
-        getSupportActionBar().setTitle("Add New Physiotherapy Page");
+        getSupportActionBar().setTitle("Σελίδα Προσθήκης Νέου Φυσιοθεραπευτηρίου");
 
 
     }
@@ -72,7 +72,7 @@ public class CreatePSPage extends AppCompatActivity {
             try{
                 String message = mediator.createNewPhysicotherapist(url);
                 if(message.equals("fail")){
-                    Toast.makeText(this, "System Fail", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Αποτυχία Συστήματος", Toast.LENGTH_SHORT).show();
                 }else{
                     //Clear form
                     clinicName.setText("");
@@ -82,7 +82,7 @@ public class CreatePSPage extends AppCompatActivity {
                     phyEmail.setText("");
                     phyPass.setText("");
                     phyID.setText("");
-                    Toast.makeText(this, "Create Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Επιτυχής Δημιουργία", Toast.LENGTH_SHORT).show();
                 }
             }catch (Exception e){
                 e.printStackTrace();
@@ -103,49 +103,49 @@ public class CreatePSPage extends AppCompatActivity {
         //Incorrect clinic Name
         aError = findViewById(R.id.nameErrorMessage);
         if (clinicName.equals("")) {
-            aError.setText("!Name is Empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
         //Incorrect clinic Address
         aError = findViewById(R.id.addresErrorMessage);
         if (clinicAddress.equals("")) {
-            aError.setText("!Address is empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
         //Incorrect AFM
         aError = findViewById(R.id.afmErrorMessage);
         if (clinicAFM.equals("")) {
-            aError.setText("!AFM is empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
         //Incorrect physicotherapist Name
         aError = findViewById(R.id.doctorNameErrorMessage);
         if (docName.equals("")) {
-            aError.setText("!Name is Empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
         //Incorrect doctor email
         aError = findViewById(R.id.mailErrorMessage);
         if (docEmail.equals("")) {
-            aError.setText("!Email is Empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
         //Incorrect doctor password
         aError = findViewById(R.id.passwordErrorMessage);
         if (docPass.equals("")) {
-            aError.setText("!Password is Empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
         //Incorrect doctor id
         aError = findViewById(R.id.idErrorMessage);
         if (docID.equals("")) {
-            aError.setText("!ID is Empty");
+            aError.setText("!Το πεδίο είναι κενό");
             emptyFileds++;
         }
 
@@ -178,49 +178,49 @@ public class CreatePSPage extends AppCompatActivity {
         //Incorrect clinic Name
         aError = findViewById(R.id.nameErrorMessage);
         if (!list.get(0)) {
-            aError.setText("!Name Already Exist");
+            aError.setText("!Το όνομα χρησιμοποιείται ήδη");
             flag = false;
         }
 
         //Incorrect clinic Address
         aError = findViewById(R.id.addresErrorMessage);
         if (!list.get(1)) {
-            aError.setText("!Address Already Exist");
+            aError.setText("!Η διεύθυνση χρησιμοποιείται ήδη");
             flag = false;
         }
 
         //Incorrect AFM
         aError = findViewById(R.id.afmErrorMessage);
         if (!list.get(2)) {
-            aError.setText("!AFM Already Exist");
+            aError.setText("!Το Α.Φ.Μ χρησιμοποιείται ήδη");
             flag = false;
         }
 
         //Incorrect physicotherapist Name
         aError = findViewById(R.id.doctorNameErrorMessage);
         if (!list.get(3)) {
-            aError.setText("!Name Already Exist");
+            aError.setText("!Το όνομα χρησιμοποιείται ήδη");
             flag = false;
         }
 
         //Incorrect doctor email
         aError = findViewById(R.id.mailErrorMessage);
         if (!list.get(5)) {
-            aError.setText("!Email Already Exist");
+            aError.setText("!Το email χρησιμοποιείται ήδη");
             flag = false;
         }
 
         //Incorrect doctor password
         aError = findViewById(R.id.passwordErrorMessage);
         if (!list.get(6)) {
-            aError.setText("!Password Already Exist");
+            aError.setText("!Ο κωδ. πρόσβασης χρησιμοποιείται ήδη");
             flag = false;
         }
 
         //Incorrect doctor id
         aError = findViewById(R.id.idErrorMessage);
         if (!list.get(4)) {
-            aError.setText("!ID Already Exist");
+            aError.setText("!Το id χρησιμοποιείται ήδη");
             flag = false;
         }
         return flag;
@@ -237,7 +237,7 @@ public class CreatePSPage extends AppCompatActivity {
         if (clinicName.length()<=45) {
             correctFields++;
         } else{
-            aError.setText("!Name must be a maximum of 45 characters");
+            aError.setText("!Το όνομα πρέπει να έχει εώς 45 χαρακτήρες");
         }
 
         //correct clinic Address
@@ -245,15 +245,15 @@ public class CreatePSPage extends AppCompatActivity {
         if (clinicAddress.length()<=30) {
             correctFields++;
         }else{
-            aError.setText("!Address must be a maximum of 30 characters");
+            aError.setText("!Η διέυθυνση πρέπει να έχει εώς 30 χαρακτήρες");
         }
 
         //correct AFM
         aError = findViewById(R.id.afmErrorMessage);
-        if (clinicAFM.length()<=10) {
+        if (clinicAFM.length()==9) {
             correctFields++;
         }else{
-            aError.setText("!AFM must be a maximum of 10 characters");
+            aError.setText("!Το Α.Φ.Μ πρέπει να είναι 9 ψηφία");
         }
 
         //Incorrect physicotherapist Name
@@ -261,7 +261,7 @@ public class CreatePSPage extends AppCompatActivity {
         if (docName.length()<=35) {
             correctFields++;
         }else{
-            aError.setText("!Name must be a maximum of 35 characters");
+            aError.setText("!Το όνομα πρέπει να είναι εώς 35 χαρακτήρες");
         }
 
         //Incorrect doctor email
@@ -269,7 +269,7 @@ public class CreatePSPage extends AppCompatActivity {
         if (docEmail.endsWith("@gmail.com") && docEmail.length()<=50) {
             correctFields++;
         }else{
-            aError.setText("!Import email with '@gmail.com' and 50 characters maximum");
+            aError.setText("!Το email πρέπει να τελειώνει με '@gmail.com' και να έχει εώς 50 χαρακτήρες");
         }
 
         //Incorrect doctor password
@@ -277,7 +277,7 @@ public class CreatePSPage extends AppCompatActivity {
         if (docPass.length()<=20) {
             correctFields++;
         }else{
-            aError.setText("!Password must be a maximum 20 characters");
+            aError.setText("!Ο κωδικός πρέπει να έχει εώς 20 χαρακτήρες");
         }
 
         //Incorrect doctor id
@@ -285,7 +285,7 @@ public class CreatePSPage extends AppCompatActivity {
         if (docID.length()<=6 && docID.startsWith("phy")) {
             correctFields++;
         }else {
-            aError.setText("!ID starts with 'phy' and must be a maximum of 6 characters");
+            aError.setText("!Το ID πρέπει να ξεκινά με 'phy' ακολουθόμενο από 3 ψηφία");
         }
 
         if(correctFields<7){

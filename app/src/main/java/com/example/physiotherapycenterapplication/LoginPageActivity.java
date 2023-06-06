@@ -30,7 +30,7 @@ public class LoginPageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
         //Change Action Title
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Login Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Εισόδου");
 
         extras = getIntent().getExtras();//Bundle extras
         user = findViewById(R.id.userText);
@@ -72,7 +72,7 @@ public class LoginPageActivity extends AppCompatActivity {
         //If not found user
         if(userData.size()==0){
             printErrors();
-            Toast.makeText(this, "User Not Found", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Δεν βρέθηκε ο χρήστης", Toast.LENGTH_SHORT).show();
         }else{
             //If found user (userData.length>0)
             Intent intent;
@@ -124,8 +124,8 @@ public class LoginPageActivity extends AppCompatActivity {
         emailField.setText("");
         passField.setText("");
         //Print error messages
-        emailMessage.setText("Email maybe is Wrong or Empty!");
-        passMessage.setText("Password maybe is Wrong or Empty!");
+        emailMessage.setText("Το Email είναι κενό ή λάθος!");
+        passMessage.setText("Ο κωδικός πρόσβασης είναι κενός ή λάθος!");
     }
 
     //Go FirstPage Function

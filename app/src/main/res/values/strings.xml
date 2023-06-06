@@ -1,26 +1,27 @@
 <resources>
     <string name="app_name">PhysiotherapyCenterApplication</string>
-    <string name="new_app_name">Φυσικοθεραπευτήριο AndroidStudio2023</string>
+    <string name="new_app_name">Φυσιοθεραπευτήριο AndroidStudio2023</string>
     <!--Texts-->
     <string name="mainPageTitle">Κεντρική Σελίδα</string>
     <string name="choiseButtonText">ΕΠΙΛΟΓΗ</string>
     <!--By Denesidis-->
     <string name="Hello">Καλώς Ήρθατε!</string>
-    <string name="descriptionMessage">Η ακόλουθη εφαρμογή αποτελεί:\nΈνα σύστημα διαχείρισης\nφυσικοθεραπευτηρίου, \nτο οποίο είναι διαθέσιμο για όλα\n τα μέλη του ΠΣΦ.</string>
+    <string name="descriptionMessage">Η ακόλουθη εφαρμογή αποτελεί:\nΈνα σύστημα διαχείρισης\nφυσιοθεραπευτηρίου, \nτο οποίο είναι διαθέσιμο για όλα\n τα μέλη του ΠΣΦ.</string>
     <string name="linkp1">Μάθετε περισσότερα</string>
     <string name="LoginPSFButtonName">ΠΣΦ</string>
-    <string name="LoginPhysiotherapistButtonName">ΦΥΣΙΚΟΘΕΡΑΠΕΥΤΗΣ</string>
+    <string name="LoginPhysiotherapistButtonName">ΦΥΣΙΟΘΕΡΑΠΕΥΤΗΣ</string>
     <string name="LoginPatientButtonName">ΑΣΘΕΝΗΣ</string>
     <string name="emailTextView">Email</string>
     <string name="passwordTextView">Password</string>
-    <string name="clinicsCentralPageHeader">Κεντρική Σελίδα Φυσικοθεραπευτηρίων</string>
-    <string name="clinicsTableHeaderCentralPage">Φυσικοθεραπευτήρια</string>
-    <string name="addClincPageHeader">Νέο Φυσικοθεραπευτήριο</string>
+    <string name="clinicsCentralPageHeader">Κεντρική Σελίδα Φυσιοθεραπευτηρίων</string>
+    <string name="clinicsTableHeaderCentralPage">Φυσιοθεραπευτήρια</string>
+    <string name="addClincPageHeader">Νέο Φυσιοθεραπευτήριο</string>
     <string name="createTextButton">Δημιουργία +</string>
     <string name="clinicNameHeader">Όνομα</string>
     <string name="clinicAddressHeader">Διεύθυνση</string>
     <string name="clinicAFMHeader">Α.Φ.Μ</string>
-    <string name="newClinicButtonText">Νέο Φυσικοθεραπευτήριο +</string>
+    <string name="newClinicButtonText">Νέο Φυσιοθεραπευτήριο +</string>
+    <string name="clearForm">Εκκαθάριση Φόρμας</string>
 
     <string name="servicesTableHeaderCentralPage">Υπηρεσίες/Παροχές</string>
     <string name="newServiceButtonText">Νέα Παροχή +</string>

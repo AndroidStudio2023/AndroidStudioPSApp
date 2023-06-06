@@ -43,7 +43,7 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="200dp"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
@@ -52,7 +52,7 @@
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Στοιχεία\n Φυσικοθεραπευτηρίου"
+                    android:text="Στοιχεία\n Φυσιοθεραπευτηρίου"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -73,6 +73,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint="εώς 45 χαρακτήρες"
                     android:inputType="textPersonName"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -99,6 +100,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint="εώς 30 χαρακτήρες"
                     android:inputType="textPersonName"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -125,6 +127,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint="9 ψηφία"
                     android:inputType="number"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -141,7 +144,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:text="Στοιχεία \n Φυσικοθεραπευτή"
+                    android:text="Στοιχεία \n Φυσιοθεραπευτή"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="16sp"
@@ -161,6 +164,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint="εώς 35 χαρακτήρες"
                     android:inputType="textPersonName"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -186,6 +190,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint="phyxxx"
                     android:inputType="textPersonName"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -211,6 +216,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint='"@gmail.com", εώς 50 χαρακτήρες'
                     android:inputType="textPersonName"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -236,6 +242,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/normal_textfileds_border"
                     android:ems="10"
+                    android:hint="εώς 20 χαρακτήρες"
                     android:inputType="textPersonName"
                     android:paddingLeft="5dp"
                     android:paddingBottom="3dp" />
@@ -269,7 +276,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:onClick="clearForm"
-            android:text="Clear Form" />
+            android:text="@string/clearForm" />
 
     </LinearLayout>
 

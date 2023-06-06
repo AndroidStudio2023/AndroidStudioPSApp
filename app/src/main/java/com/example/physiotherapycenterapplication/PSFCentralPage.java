@@ -32,7 +32,7 @@ public class PSFCentralPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_psfcentral_page);
         //Change Action Title
-        getSupportActionBar().setTitle("Central Physiotherapy Clinics Page");
+        getSupportActionBar().setTitle("Κεντρική Σελίδα Φυσιοθεραπευτηρίων");
         Bundle extras = getIntent().getExtras();
         userData = extras.getStringArrayList("userDataArrayList");
 
@@ -169,7 +169,7 @@ public class PSFCentralPage extends AppCompatActivity {
         TextView rowContent = new TextView(this);
 
         //Draw textview
-        rowContent.setText("Not Found Clinics");
+        rowContent.setText("Δεν βρέθηκαν Φυσιοθεραπευτήρια");
         rowContent.setWidth(1429);
         rowContent.setTextColor(getResources().getColor(R.color.black));
         rowContent.setTextAlignment(TextView.TEXT_ALIGNMENT_CENTER);
