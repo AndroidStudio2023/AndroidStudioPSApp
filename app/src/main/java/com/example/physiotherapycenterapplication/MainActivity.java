@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public String getUserTypeCode(String text){
         String code = "PSF";
 
-        if(text.equals("ΦΥΣΙΚΟΘΕΡΑΠΕΥΤΗΣ")){
+        if(text.equals("ΦΥΣΙΟΘΕΡΑΠΕΥΤΗΣ")){
             code = "PHY";
         } else if (text.equals("ΑΣΘΕΝΗΣ")) {
             code = "PAT";
