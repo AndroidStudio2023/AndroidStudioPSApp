@@ -16,11 +16,8 @@ import java.util.Date;
 public class MainPatient extends AppCompatActivity{
     //public Button button1;
     public Button button2;
-
     TextView closePopUp;
-
     Button openPopUp;
-
     ImageButton imgButton;
     ArrayList<String> userData;//For save user Data
     @Override
