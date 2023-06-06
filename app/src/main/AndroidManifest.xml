@@ -46,10 +46,10 @@
             android:name=".ServicesCentralPage"
             android:exported="false" />
         <activity
-            android:name=".new_patient"
+            android:name=".New_patient"
             android:exported="false" />
         <activity
-            android:name=".main_doctor_page"
+            android:name=".Main_doctor_page"
             android:exported="false" />
         <activity
             android:name=".NewPSFCentralPage"

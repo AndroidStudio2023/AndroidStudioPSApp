@@ -7,11 +7,10 @@ import android.content.Intent;
 import android.widget.Button;
 import android.view.*;
 
-import java.io.IOException;
 import java.util.Objects;
 
 
-public class main_doctor_page extends AppCompatActivity {
+public class Main_doctor_page extends AppCompatActivity {
 
 
     public Button buttona;
@@ -30,7 +29,7 @@ public class main_doctor_page extends AppCompatActivity {
         buttona.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(main_doctor_page.this,new_patient.class);
+                Intent intent = new Intent(Main_doctor_page.this, New_patient.class);
                 startActivity(intent);
             }
         });

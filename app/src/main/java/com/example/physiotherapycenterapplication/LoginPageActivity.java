@@ -15,9 +15,6 @@ import com.example.physiotherapycenterapplication.R.id;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
-
-import okhttp3.OkHttpClient;
 
 
 public class LoginPageActivity extends AppCompatActivity {
@@ -81,7 +78,7 @@ public class LoginPageActivity extends AppCompatActivity {
                 intent.putExtra("userDataArrayList",userData);
                 startActivity(intent);
             } else if (typeUser.equals("PHY")) {
-                intent = new Intent(getApplicationContext(),main_doctor_page.class);
+                intent = new Intent(getApplicationContext(), Main_doctor_page.class);
                 intent.putExtra("userDataArrayList",userData);
                 startActivity(intent);
             } else{

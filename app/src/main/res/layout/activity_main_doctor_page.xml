@@ -7,7 +7,7 @@
     android:background="@color/backgroundColor"
     android:gravity="center_vertical|center_horizontal"
     android:orientation="vertical"
-    tools:context=".main_doctor_page">
+    tools:context=".Main_doctor_page">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

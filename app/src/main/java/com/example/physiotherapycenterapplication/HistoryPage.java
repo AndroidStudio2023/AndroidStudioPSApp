@@ -86,7 +86,7 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
 
     //προσωρινό-για την πρόσβαση του ιστορικού από το main doctor page και την επιστροφή σε αυτό
     public void goToMainDoctorPage(View view){
-        Intent intent = new Intent(getApplicationContext(), main_doctor_page.class);
+        Intent intent = new Intent(getApplicationContext(), Main_doctor_page.class);
         startActivity(intent);
     }
 

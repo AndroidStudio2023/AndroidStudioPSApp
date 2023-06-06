@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class new_patient extends AppCompatActivity {
+public class New_patient extends AppCompatActivity {
 
     String name, adress, amka;
 
@@ -44,7 +44,7 @@ public class new_patient extends AppCompatActivity {
 
            private void showToast(String text) {
 
-               Toast.makeText(new_patient.this,text,Toast.LENGTH_SHORT).show();
+               Toast.makeText(New_patient.this,text,Toast.LENGTH_SHORT).show();
            }
        });
 
