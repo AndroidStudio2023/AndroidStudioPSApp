@@ -2,6 +2,7 @@ package com.example.physiotherapycenterapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.service.autofill.UserData;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -17,15 +18,22 @@ public class MainPatient extends AppCompatActivity{
     //public Button button1;
     public Button button2;
     TextView closePopUp;
+    TextView Printname;
     Button openPopUp;
     ImageButton imgButton;
     ArrayList<String> userData;//For save user Data
+    Bundle extras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_patient);
         getSupportActionBar().setTitle("Αρχική Σελίδα");
         button2 = (Button) findViewById(R.id.date_button);
+        extras = getIntent().getExtras();//Bundle extras
+        userData = extras.getStringArrayList("userDataArrayList");
+        String Amka = userData.get(0);
+
+        PrintDocData(Amka);
 
         imgButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,8 +44,6 @@ public class MainPatient extends AppCompatActivity{
 
         });
         //Get Patient Data (AMKA & NAME)
-        Bundle patData = getIntent().getExtras();
-        userData = patData.getStringArrayList("userDataArrayList");
 
         //Χρειάζεται ένας πάροχος που με βάση το Α.Μ.Κ.Α (1ο στοιχείο του userData)
         //Να βρίσκει σε πιο ιατρείο ανήκει
@@ -60,6 +66,17 @@ public class MainPatient extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+    }
+    public void PrintDocData(String Amka){
+        String url = "http://10.0.2.2/AndroidStudioProviders/findUser.php?patient="+Amka;
+        OkHttpMediator Mediator=new OkHttpMediator();
+        try {
+            ArrayList<String> DocDataArray = Mediator.patientInfo(url);
+            Printname = findViewById(R.id.docname);
+            Printname.setText(DocDataArray.get(0));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
     public void onBackPressed(){
 

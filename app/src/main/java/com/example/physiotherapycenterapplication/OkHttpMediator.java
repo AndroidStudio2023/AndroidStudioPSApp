@@ -182,6 +182,32 @@ public class OkHttpMediator {
 
         return history;
     }
+    public ArrayList <String> patientInfo(String url) throws IOException {
 
+        ArrayList<String> history = new ArrayList<>();
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        //Import data from JSON array to history ArrayList
+        try {
+            JSONArray json = new JSONArray(data);
+
+            for (int i=0; i<json.length(); i++) {
+                history.add(json.getString(i));
+                System.out.println(json.getString(i));
+            }
+        }
+        catch (JSONException e) {
+            System.out.println("======================JSONError================================\n");
+            e.printStackTrace();
+        }
+
+        return history;
+    }
 
 }
