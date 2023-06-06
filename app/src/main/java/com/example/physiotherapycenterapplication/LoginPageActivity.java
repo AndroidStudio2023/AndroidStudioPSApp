@@ -33,7 +33,7 @@ public class LoginPageActivity extends AppCompatActivity {
         user = findViewById(R.id.userText);
         typeUser = extras.getString("TypeUser");//Save extra information
         //user.setText(typeUser);
-
+        //Toast.makeText(this, typeUser, Toast.LENGTH_SHORT).show();
 
     }
 

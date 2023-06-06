@@ -25,7 +25,7 @@
             android:gravity="center"
             android:orientation="vertical"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintBottom_toTopOf="@+id/patientsButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13">
@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/mockup_textview_bolder"
+                android:onClick="goToPatientsRequests"
                 android:padding="5dp"
                 android:text="Εντάξει"
                 android:textAlignment="center"
@@ -118,29 +119,29 @@
             app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/patientsButton"
             android:layout_width="163dp"
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/buttonColor"
             android:text="Ασθενείς"
-            app:layout_constraintBottom_toTopOf="@+id/button4"
+            app:layout_constraintBottom_toTopOf="@+id/patientsAppointmentButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/patientsAppointmentButton"
             android:layout_width="163dp"
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/buttonColor"
             android:text="Ραντεβού"
-            app:layout_constraintBottom_toTopOf="@+id/button5"
+            app:layout_constraintBottom_toTopOf="@+id/addNewPatientButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/addNewPatientButton"
             android:layout_width="163dp"
             android:layout_height="50dp"
             android:layout_marginBottom="32dp"

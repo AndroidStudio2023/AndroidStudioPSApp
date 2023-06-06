@@ -2,6 +2,7 @@ package com.example.physiotherapycenterapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
@@ -23,8 +24,8 @@ public class Main_doctor_page extends AppCompatActivity {
         setContentView(R.layout.activity_main_doctor_page);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Main Doctor Page");
 
-        buttona = (Button) findViewById(R.id.button5);
-        buttonb = (Button) findViewById(R.id.button3);
+        buttona = (Button) findViewById(R.id.addNewPatientButton);
+        buttonb = (Button) findViewById(R.id.patientsButton);
         //χρειαζομαι τουλαχιστον την αναζητηση των ασθενων για να συνδεσω το κουμπι "Ασθενεις"
 
 
@@ -39,8 +40,13 @@ public class Main_doctor_page extends AppCompatActivity {
         buttonb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PatientProfilePage.class);
-                startActivity(intent);
+                try{
+                    Intent intent1 = new Intent(getApplicationContext(), PatientSearchPage.class);
+                    startActivity(intent1);
+                }catch (ActivityNotFoundException e){
+                    e.printStackTrace();
+                }
+
             }
         });
 
@@ -52,13 +58,14 @@ public class Main_doctor_page extends AppCompatActivity {
 
         //Split name into lastname and firstname
         String[] doctorSplitName = doctorName.split(" ");
-        System.out.println("epitheto giatrou: "+ doctorSplitName[0] + "\nonoma giatrou: " + doctorSplitName[1]);
+        //!!!Edw upirxe provlima, Mporei na proekupse se periptwsi pou den exei o physiothterapist 2 lexeis sto onoma
+        //System.out.println("epitheto giatrou: "+ doctorSplitName[0] + ",ononoma giatrou: " + doctorSplitName[1]);
         TextView textView = findViewById(R.id.textView13);
         textView.setText(doctorSplitName[0] + "!");
 
 
         //gia na pernaw to id toy giatroy sto patient search kai na ginetai emfanish twn asthenwn me bash to doctor id
-        Button astheneisButton  = (Button) findViewById(R.id.button3);
+        Button astheneisButton  = (Button) findViewById(R.id.patientsButton);
         astheneisButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +83,12 @@ public class Main_doctor_page extends AppCompatActivity {
     //Apo iwanna proswrino - gia thn metakinhsh sto page tou istorikou
     public void goToHistoryPage(View view){
         Intent intent = new Intent(getApplicationContext(), HistoryPage.class);
+        startActivity(intent);
+    }
+
+    //Apo PM gia metafora stis aitiseis
+    public void goToPatientsRequests(View view){
+        Intent intent = new Intent(getApplicationContext(), MainDoctorRequestPage.class);
         startActivity(intent);
     }
 
