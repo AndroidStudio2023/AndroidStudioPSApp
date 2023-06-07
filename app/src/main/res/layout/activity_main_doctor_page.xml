@@ -151,16 +151,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="170dp"
-            android:layout_height="41dp"
-            android:backgroundTint="@color/buttonColor"
-            android:onClick="goToHistoryPage"
-            android:text="Ιστορικό-temp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <ImageButton
             android:id="@+id/goBackLoginPageDoctor"
             android:layout_width="40dp"

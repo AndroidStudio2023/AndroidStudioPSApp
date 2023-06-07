@@ -39,12 +39,11 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="89dp"
-        android:layout_height="76dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +82,7 @@
         android:layout_width="55dp"
         android:layout_height="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintEnd_toStartOf="@+id/firstLastNamePatient"
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -91,7 +90,7 @@
         app:srcCompat="@drawable/baseline_account_circle_24" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/firstLastNamePatient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -107,54 +106,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.379" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="42dp"
-        android:layout_marginBottom="65dp"
-        android:background="@color/buttonColor"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageButton
+        android:id="@+id/returnToSearchPatientPage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:onClick="goToSearchPatientPage"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="62dp"
-            android:layout_height="match_parent"
-            android:background="@color/buttonColor"
-            android:contentDescription="back button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/_545435" />
-
-        <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="59dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="349dp"
-            android:layout_marginEnd="349dp"
-            android:layout_marginRight="349dp"
-            android:background="@color/buttonColor"
-            android:contentDescription="delete button"
-            android:scaleType="fitCenter"
-            android:src="@drawable/baseline_cancel_24"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="289dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="62dp"
-            android:gravity="center"
-            android:text="Προφίλ Ασθενή"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-
-    </RelativeLayout>
+        app:srcCompat="@drawable/_545435" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
