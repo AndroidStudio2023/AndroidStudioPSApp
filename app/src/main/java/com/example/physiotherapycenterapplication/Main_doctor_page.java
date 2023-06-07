@@ -18,6 +18,9 @@ public class Main_doctor_page extends AppCompatActivity {
 
     public Button buttona;
     public Button buttonb;
+    Button astheneisButton;
+    Bundle extras;
+    ArrayList<String> doctorData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +55,8 @@ public class Main_doctor_page extends AppCompatActivity {
 
 
         //apo ioanna:
-        Bundle extras = getIntent().getExtras();
-        ArrayList<String> doctorData = extras.getStringArrayList("userDataArrayList");
+        extras = getIntent().getExtras();
+        doctorData = extras.getStringArrayList("userDataArrayList");
         String doctorName = doctorData.get(1);
 
         //Split name into lastname and firstname
@@ -65,13 +68,12 @@ public class Main_doctor_page extends AppCompatActivity {
 
 
         //gia na pernaw to id toy giatroy sto patient search kai na ginetai emfanish twn asthenwn me bash to doctor id
-        Button astheneisButton  = (Button) findViewById(R.id.patientsButton);
+        astheneisButton  = (Button) findViewById(R.id.patientsButton);
         astheneisButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PatientSearchPage.class);
-                String doctorid = doctorData.get(0);
-                intent.putExtra("doctorid", doctorid);
+                intent.putExtra("userDataArrayList",doctorData );
                 startActivity(intent);
             }
         });
@@ -83,13 +85,27 @@ public class Main_doctor_page extends AppCompatActivity {
     //Apo iwanna proswrino - gia thn metakinhsh sto page tou istorikou
     public void goToHistoryPage(View view){
         Intent intent = new Intent(getApplicationContext(), HistoryPage.class);
+        intent.putExtra("userDataArrayList",doctorData);
         startActivity(intent);
     }
 
     //Apo PM gia metafora stis aitiseis
     public void goToPatientsRequests(View view){
         Intent intent = new Intent(getApplicationContext(), MainDoctorRequestPage.class);
+        intent.putExtra("userDataArrayList",doctorData);
         startActivity(intent);
+    }
+
+    //Log Out function
+    public void LogOut(View view){
+        Intent intent = new Intent(getApplicationContext(),LoginPageActivity.class);
+        intent.putExtra("TypeUser","PHY");
+        startActivity(intent);
+    }
+
+    //Block Back Button
+    public void onBackPressed() {
+        // do nothing.
     }
 
 }

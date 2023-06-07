@@ -20,11 +20,18 @@ public class PatientSearchPage extends AppCompatActivity {
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
 
+    //Apo PM
+    Bundle extras;
+    ArrayList<String> doctorData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_search_page);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Patient Search Page");
+
+        //Apo PM
+        extras = getIntent().getExtras();
+        doctorData = extras.getStringArrayList("userDataArrayList");
 
         searchView=findViewById(R.id.searchView);
         myListView=findViewById(R.id.listView);
@@ -53,6 +60,17 @@ public class PatientSearchPage extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void goToDoctorMainPage(View view){
+        Intent intent = new Intent(getApplicationContext(),Main_doctor_page.class);
+        intent.putExtra("userDataArrayList",doctorData);
+        startActivity(intent);
+    }
+
+    //Block Back Button
+    public void onBackPressed() {
+        // do nothing.
     }
 
 }
