@@ -84,6 +84,7 @@ public class LoginPageActivity extends AppCompatActivity {
             } else{
                 intent = new Intent(getApplicationContext(),MainPatient.class);
                 intent.putExtra("userDataArrayList",userData);
+                intent.putExtra("showPopPup",false);
                 startActivity(intent);
             }
 

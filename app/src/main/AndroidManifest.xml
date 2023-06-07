@@ -34,11 +34,11 @@
         <activity
             android:name=".MyDate"
             android:exported="false"
-            android:parentActivityName=".MainPatient" />
+             />
         <activity
             android:name=".MainPatient"
             android:exported="true"
-            android:parentActivityName=".LoginPageActivity" />
+            />
         <activity
             android:name=".CreateServicePage"
             android:exported="false" />
