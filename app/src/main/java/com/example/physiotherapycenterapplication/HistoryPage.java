@@ -23,7 +23,7 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
 
     Bundle extras;
     ArrayList<String> doctorData;
-
+    String patientName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,7 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
 
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
-
+        patientName = extras.getString("patientName");
         List<String> list = new ArrayList<>();
 
         //Get history data from database
@@ -88,6 +88,7 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
     public void goToPatientProfilePage(View view){
         Intent intent = new Intent(getApplicationContext(),PatientProfilePage.class);
         intent.putExtra("userDataArrayList",doctorData);
+        intent.putExtra("patientName",patientName);
         startActivity(intent);
     }
 

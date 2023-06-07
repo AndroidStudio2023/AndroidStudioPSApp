@@ -22,7 +22,7 @@ public class PatientProfilePage extends AppCompatActivity {
 
     ArrayList<String> doctorData;
 
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +49,12 @@ public class PatientProfilePage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToAddVisitPage(View view){
+        Intent intent = new Intent(getApplicationContext(),AddNewVisitPage.class);
+        intent.putExtra("userDataArrayList",doctorData);
+        intent.putExtra("patientName",patientName);
+        startActivity(intent);
+    }
     //Block Back Button
     public void onBackPressed() {
         // do nothing.
