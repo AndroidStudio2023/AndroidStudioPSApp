@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="backgroundColor">#e0e0d1</color>
+    <color name="backgroundColor">#F1EFEF</color>
     <color name="buttonColor">#0099ff</color>
     <color name="PrimariesColor">#66d9ff</color>
     <color name="errorColor">#FF0000</color>
