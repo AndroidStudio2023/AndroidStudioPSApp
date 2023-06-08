@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainPatient extends AppCompatActivity{
@@ -18,6 +19,7 @@ public class MainPatient extends AppCompatActivity{
     Boolean showPopup;
     ImageButton imgButton;
     ArrayList<String> userData;//For save user Data
+    ArrayList<String> doctordata = new ArrayList<>();//For Doctor Data
     Bundle patData;
     LinearLayout popupArea;
     @Override
@@ -28,6 +30,13 @@ public class MainPatient extends AppCompatActivity{
         button2 = (Button) findViewById(R.id.date_button);
         imgButton = (ImageButton) findViewById(R.id.imageButtonPatientOut);
         popupArea = findViewById(R.id.popUpArea);
+        OkHttpMediator okHttpMediator = new OkHttpMediator();
+        String url = "http://10.0.2.2/AndroidStudioProviders/docinfo.php";
+        try {
+            doctordata = okHttpMediator.patientDoctorInfo(url);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         imgButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,6 +77,7 @@ public class MainPatient extends AppCompatActivity{
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyDate.class);
                 intent.putExtra("userDataArrayList",userData);
+                intent.putExtra("doctordataArrayList", doctordata);
                 startActivity(intent);
             }
         });

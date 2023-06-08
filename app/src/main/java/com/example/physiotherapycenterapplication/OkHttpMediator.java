@@ -182,9 +182,9 @@ public class OkHttpMediator {
 
         return history;
     }
-    public ArrayList <String> patientInfo(String url) throws IOException {
+    public ArrayList<String> patientDoctorInfo(String url) throws IOException {
 
-        ArrayList<String> history = new ArrayList<>();
+        ArrayList<String> doctordata = new ArrayList<>();
 
         //Request
         OkHttpClient client = new OkHttpClient().newBuilder().build();
@@ -198,7 +198,7 @@ public class OkHttpMediator {
             JSONArray json = new JSONArray(data);
 
             for (int i=0; i<json.length(); i++) {
-                history.add(json.getString(i));
+                doctordata.add(json.getString(i));
                 System.out.println(json.getString(i));
             }
         }
@@ -207,7 +207,7 @@ public class OkHttpMediator {
             e.printStackTrace();
         }
 
-        return history;
+        return doctordata;
     }
 
     public ArrayList<ArrayList<String>> getServices(String url) throws Exception{
@@ -242,5 +242,15 @@ public class OkHttpMediator {
 
         return  services;
     }
+    public String addRequest(String url) throws Exception{
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = "fail";
+        data = response.body().string();
 
+        return  data;
+    }
 }
