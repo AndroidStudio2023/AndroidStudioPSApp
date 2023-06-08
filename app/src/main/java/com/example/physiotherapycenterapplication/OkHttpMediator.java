@@ -210,4 +210,37 @@ public class OkHttpMediator {
         return history;
     }
 
+    public ArrayList<ArrayList<String>> getServices(String url) throws Exception{
+        ArrayList<ArrayList<String>> services = new ArrayList<>();
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        try{
+            //1st level(All services)
+            JSONArray servs = new JSONArray(data);
+            for(int i=0; i<servs.length(); i++){
+                //2nd level (one by one service)
+                JSONArray curServ = servs.getJSONArray(i);//Get a service
+                //Split service and save to curServArrayList
+                ArrayList<String> curServArrayList = new ArrayList<>();
+                curServArrayList.add(curServ.getString(0));
+                curServArrayList.add(curServ.getString(1));
+                curServArrayList.add(curServ.getString(2));
+                curServArrayList.add(curServ.getString(3));
+                //Pass curServArrayList to services
+                services.add(curServArrayList);
+
+            }
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        return  services;
+    }
+
 }
