@@ -4,57 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context=".MainActivity">
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_alignParentStart="true"
-            android:background="@color/buttonColor"
-            android:scaleType="fitCenter"
-            android:src="@drawable/_545435" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginStart="-1dp"
-            android:layout_marginEnd="3dp"
-            android:layout_toStartOf="@id/imageButton2"
-            android:layout_toEndOf="@id/imageButton1"
-            android:background="@color/tableHeaderColor"
-            android:gravity="center"
-            android:text="Αιτήσεις"
-            android:textColor="@color/white" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
-            android:layout_alignParentEnd="true"
-            android:background="@color/buttonColor"
-            android:scaleType="fitCenter"
-            android:src="@android:drawable/ic_menu_delete" />
-    </RelativeLayout>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/appicon1" />
+
+    <ImageButton
+        android:id="@+id/doBackDoctorasPage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@null"
+        android:onClick="goToDoctorMainPage"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_545435" />
 
     <TextView
         android:id="@+id/textView2"
@@ -70,8 +44,10 @@
 
     <ScrollView
         android:layout_width="415dp"
-        android:layout_height="485dp"
-        android:layout_marginTop="248dp"
+        android:layout_height="450dp"
+        android:layout_marginTop="275dp"
+        android:background="#EAE3E3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +98,6 @@
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:src="@drawable/cancel_close_10373" />
-
 
 
             </LinearLayout>

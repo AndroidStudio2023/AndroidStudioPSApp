@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
+
 public class MyDate extends AppCompatActivity{
     private Button confirm_button;
     CalendarView calendar;
@@ -30,7 +32,11 @@ public class MyDate extends AppCompatActivity{
         confirm_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PatientPagePopUp.class);
+                Bundle patData = getIntent().getExtras();
+                ArrayList<String> arrayListData = patData.getStringArrayList("userDataArrayList");
+                Intent intent = new Intent(getApplicationContext(), MainPatient.class);
+                intent.putExtra("userDataArrayList",arrayListData);
+                intent.putExtra("showPopPup",true);//Flag for show popup in central page
                 startActivity(intent);
             }
         });

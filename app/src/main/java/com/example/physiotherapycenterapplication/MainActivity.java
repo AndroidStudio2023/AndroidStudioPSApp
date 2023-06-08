@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void moveToLoginPage(View view){
-        String userType;//Save selected button's name
+        String userType=null;//Save selected button's name
 
         //Get user type (PSF, Physiotherapist, Patient)
         login = (Button)view;

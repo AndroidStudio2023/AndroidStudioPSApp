@@ -21,12 +21,18 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
     RecyclerViewAdapter adapter;
     RecyclerView recyclerView;
 
+    Bundle extras;
+    ArrayList<String> doctorData;
+    String patientName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history_page);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Ιστορικό");
 
+        extras = getIntent().getExtras();
+        doctorData = extras.getStringArrayList("userDataArrayList");
+        patientName = extras.getString("patientName");
         List<String> list = new ArrayList<>();
 
         //Get history data from database
@@ -81,12 +87,15 @@ public class HistoryPage extends AppCompatActivity implements NavigationView.OnN
 
     public void goToPatientProfilePage(View view){
         Intent intent = new Intent(getApplicationContext(),PatientProfilePage.class);
+        intent.putExtra("userDataArrayList",doctorData);
+        intent.putExtra("patientName",patientName);
         startActivity(intent);
     }
 
     //προσωρινό-για την πρόσβαση του ιστορικού από το main doctor page και την επιστροφή σε αυτό
     public void goToMainDoctorPage(View view){
         Intent intent = new Intent(getApplicationContext(), Main_doctor_page.class);
+        intent.putExtra("userDataArrayList",doctorData);
         startActivity(intent);
     }
 
