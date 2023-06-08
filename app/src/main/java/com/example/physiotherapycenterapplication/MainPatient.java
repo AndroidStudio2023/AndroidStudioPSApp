@@ -27,11 +27,14 @@ public class MainPatient extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_patient);
         getSupportActionBar().setTitle("Αρχική Σελίδα");
+        //Get Patient Data (AMKA & NAME)
+        patData = getIntent().getExtras();
+        userData = patData.getStringArrayList("userDataArrayList");
         button2 = (Button) findViewById(R.id.date_button);
         imgButton = (ImageButton) findViewById(R.id.imageButtonPatientOut);
         popupArea = findViewById(R.id.popUpArea);
         OkHttpMediator okHttpMediator = new OkHttpMediator();
-        String url = "http://10.0.2.2/AndroidStudioProviders/docinfo.php";
+        String url = "http://10.0.2.2/AndroidStudioProviders/docinfo.php?patient="+userData.get(0);
         try {
             doctordata = okHttpMediator.patientDoctorInfo(url);
         } catch (IOException e) {
@@ -46,9 +49,7 @@ public class MainPatient extends AppCompatActivity{
             }
 
         });
-        //Get Patient Data (AMKA & NAME)
-        patData = getIntent().getExtras();
-        userData = patData.getStringArrayList("userDataArrayList");
+
         //Hide/show popup area
         showPopup = patData.getBoolean("showPopPup");
         //ShowPopup = true -> show popup message
