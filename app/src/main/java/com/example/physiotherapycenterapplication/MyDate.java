@@ -18,6 +18,7 @@ public class MyDate extends AppCompatActivity{
     CalendarView calendar;
     TextView selectDateField;
 
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -46,6 +47,13 @@ public class MyDate extends AppCompatActivity{
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
                 String selectedDate = String.valueOf(day)+" "+String.valueOf(month+1)+" "+String.valueOf(year);
                 selectDateField.setText(String.valueOf(selectedDate));
+            }
+        });
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
