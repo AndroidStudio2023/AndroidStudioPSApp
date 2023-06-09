@@ -21,6 +21,7 @@ public class PatientSearchPage extends AppCompatActivity {
     ListView myListView;
 
     ArrayList<String> arrayList;
+    ArrayList<ArrayList<String>> patientsData;
     ArrayAdapter<String> adapter;
 
     //Apo PM
@@ -35,6 +36,7 @@ public class PatientSearchPage extends AppCompatActivity {
         //Apo PM
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
+        //----------------------------------------------------------------//
 
         searchView=findViewById(R.id.searchView);
         myListView=findViewById(R.id.listView);
@@ -42,6 +44,7 @@ public class PatientSearchPage extends AppCompatActivity {
         myListView.setVisibility(View.GONE);
 
         arrayList=new ArrayList<>();
+        //Mediator for load patients
         arrayList.add("Παπαδόπουλος Γρηγόριος");
         arrayList.add("Παπαδόπουλος Ευγένιος");
         arrayList.add("Tryal Patient");

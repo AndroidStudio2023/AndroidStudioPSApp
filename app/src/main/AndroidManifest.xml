@@ -15,6 +15,12 @@
         android:theme="@style/Theme.PhysiotherapyCenterApplication"
         tools:targetApi="31">
         <activity
+            android:name=".DailyAppointments"
+            android:exported="false" />
+        <activity
+            android:name=".SelectAppointmentsDay"
+            android:exported="false" />
+        <activity
             android:name=".AddNewVisitPage"
             android:exported="false" />
         <activity
@@ -30,12 +36,10 @@
 
         <activity
             android:name=".MyDate"
-            android:exported="false"
-             />
+            android:exported="false" />
         <activity
             android:name=".MainPatient"
-            android:exported="true"
-            />
+            android:exported="true" />
         <activity
             android:name=".CreateServicePage"
             android:exported="false" />
@@ -70,10 +74,12 @@
         <activity
             android:name=".LoginPageActivity"
             android:exported="false" />
-        <activity android:name=".PatientSearchPage"
-            android:exported="false"/>
-        <activity android:name=".PatientProfilePage"
-            android:exported="false"/>
+        <activity
+            android:name=".PatientSearchPage"
+            android:exported="false" />
+        <activity
+            android:name=".PatientProfilePage"
+            android:exported="false" />
     </application>
 
 </manifest>
