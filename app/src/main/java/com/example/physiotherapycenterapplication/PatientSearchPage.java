@@ -31,7 +31,7 @@ public class PatientSearchPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_search_page);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Patient Search Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Αναζήτησης Ασθενών");
 
         //Apo PM
         extras = getIntent().getExtras();

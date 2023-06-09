@@ -16,6 +16,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainDoctorRequestPage extends AppCompatActivity {
 
@@ -25,6 +26,7 @@ public class MainDoctorRequestPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_doctor_request_page);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Διαχείρισης Αιτημάτων");
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
         printRequests();

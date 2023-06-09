@@ -26,7 +26,7 @@ public class MainPatient extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_patient);
-        getSupportActionBar().setTitle("Αρχική Σελίδα");
+        getSupportActionBar().setTitle("Κεντρική Σελίδα Ασθενή");
         //Get Patient Data (AMKA & NAME)
         patData = getIntent().getExtras();
         userData = patData.getStringArrayList("userDataArrayList");

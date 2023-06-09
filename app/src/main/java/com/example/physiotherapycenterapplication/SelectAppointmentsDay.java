@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CalendarView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class SelectAppointmentsDay extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class SelectAppointmentsDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_appointments_day);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Επιλογής Ημερομηνίας");
         calendar = findViewById(R.id.calendarView1);
         //Bundle
         extras = getIntent().getExtras();

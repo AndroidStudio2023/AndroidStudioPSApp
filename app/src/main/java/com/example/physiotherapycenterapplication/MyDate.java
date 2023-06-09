@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MyDate extends AppCompatActivity{
     private Button confirm_button;
@@ -31,7 +32,7 @@ public class MyDate extends AppCompatActivity{
         calendar = findViewById(R.id.calendarView);
         selectDateField = findViewById(R.id.selectDate);
 
-        getSupportActionBar().setTitle("Ραντεβού");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Αίτησης Ραντεβού");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bundle = getIntent().getExtras();

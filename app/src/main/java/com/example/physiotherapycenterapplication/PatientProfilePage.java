@@ -28,7 +28,7 @@ public class PatientProfilePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient_profile_page);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Patient Profile Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Προφίλ Ασθενή");
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
         //Print patient name

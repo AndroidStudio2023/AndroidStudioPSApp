@@ -25,7 +25,7 @@ public class Main_doctor_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_doctor_page);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("Main Doctor Page");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Κεντρική Σελίδα Φυσιοθεραπευτή");
 
         buttona = (Button) findViewById(R.id.addNewPatientButton);
         buttonb = (Button) findViewById(R.id.patientsButton);

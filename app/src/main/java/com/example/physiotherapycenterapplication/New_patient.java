@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class New_patient extends AppCompatActivity {
 
     String name, adress, amka;
@@ -24,7 +26,7 @@ public class New_patient extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_patient);
-
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Προσθήκης Νέου Ασθενή");
         nameInput = (EditText) findViewById(R.id.nameInput);
         adressInput = (EditText) findViewById(R.id.adressInput);
         amkaInput = (EditText) findViewById(R.id.amkaInput);

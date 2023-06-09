@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class AddNewVisitPage extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class AddNewVisitPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_visit_page);
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Προσθήκης Επίσκεψης");
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
         patientData = extras.getStringArrayList("patientName");

@@ -15,7 +15,7 @@ public class ServicesCentralPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_services_central_page);
-        getSupportActionBar().setTitle("Central Physiotherapy Clinics Page");
+        getSupportActionBar().setTitle("Κεντρική Σελίδα Παροχών/Υπηρεσιών");
         Bundle extras = getIntent().getExtras();
         userData = extras.getStringArrayList("userDataArrayList");
     }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class DailyAppointments extends AppCompatActivity {
 
@@ -25,6 +26,8 @@ public class DailyAppointments extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_appointments);
+
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Προβολής Ημερησίων Ραντεβού");
         extras = getIntent().getExtras();
         day = extras.getString("date");
         doctorData = extras.getStringArrayList("userDataArrayList");
