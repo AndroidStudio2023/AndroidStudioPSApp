@@ -30,7 +30,6 @@ public class Main_doctor_page extends AppCompatActivity {
         setContentView(R.layout.activity_main_doctor_page);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Κεντρική Σελίδα Φυσιοθεραπευτή");
 
-        //apo ioanna:
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
         String doctorName = doctorData.get(1);
@@ -38,6 +37,7 @@ public class Main_doctor_page extends AppCompatActivity {
         popup = findViewById(R.id.popUpArea);
         buttona = (Button) findViewById(R.id.addNewPatientButton);
         buttonb = (Button) findViewById(R.id.patientsButton);
+
         //Print popup
         OkHttpMediator mediator = new OkHttpMediator();
         try{
@@ -53,6 +53,7 @@ public class Main_doctor_page extends AppCompatActivity {
             popup.setVisibility(View.VISIBLE);
         }
 
+        //Go to New_patient Page
         buttona.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +62,7 @@ public class Main_doctor_page extends AppCompatActivity {
             }
         });
 
+        //Go to PatientSearchPage
         buttonb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,17 +77,13 @@ public class Main_doctor_page extends AppCompatActivity {
         });
 
 
-
-
         //Split name into lastname and firstname
         String[] doctorSplitName = doctorName.split(" ");
-        //!!!Edw upirxe provlima, Mporei na proekupse se periptwsi pou den exei o physiothterapist 2 lexeis sto onoma
-        //System.out.println("epitheto giatrou: "+ doctorSplitName[0] + ",ononoma giatrou: " + doctorSplitName[1]);
         TextView textView = findViewById(R.id.textView13);
         textView.setText(doctorSplitName[0] + "!");
 
 
-        //gia na pernaw to id toy giatroy sto patient search kai na ginetai emfanish twn asthenwn me bash to doctor id
+        //gia na pernaei to id toy giatroy sto patient search kai na ginetai emfanish twn asthenwn me bash to doctor id
         astheneisButton  = (Button) findViewById(R.id.patientsButton);
         astheneisButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,16 +94,8 @@ public class Main_doctor_page extends AppCompatActivity {
             }
         });
 
-
     }
 
-
-    //Apo iwanna proswrino - gia thn metakinhsh sto page tou istorikou
-    public void goToHistoryPage(View view){
-        Intent intent = new Intent(getApplicationContext(), HistoryPage.class);
-        intent.putExtra("userDataArrayList",doctorData);
-        startActivity(intent);
-    }
 
     //Apo PM gia metafora stis aitiseis
     public void goToPatientsRequests(View view){

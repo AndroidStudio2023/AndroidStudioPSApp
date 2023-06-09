@@ -60,18 +60,18 @@
                 android:text="Συγχαρητήρια!"
                 android:textAlignment="center"
                 android:textColor="@color/black"
-                android:textSize="34sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/popupMess"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Επιτυχής Υποβολή Αίτησης"
+                android:text="Επιτυχής υποβολή αίτησης."
                 android:textAlignment="center"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/okTextView"
@@ -84,7 +84,7 @@
                 android:text="Εντάξει"
                 android:textAlignment="center"
                 android:textColor="#03A9F4"
-                android:textSize="24sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
     </FrameLayout>

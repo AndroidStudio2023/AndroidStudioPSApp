@@ -32,7 +32,7 @@ public class DailyAppointments extends AppCompatActivity {
         day = extras.getString("date");
         doctorData = extras.getStringArrayList("userDataArrayList");
         myDate = findViewById(R.id.dayTextView);
-        myDate.setText("Τα ραντεβούσας για \n          '"+day+"'");
+        myDate.setText("Τα ραντεβού σας για \n          '"+day+"'");
 
         listView = (ListView) findViewById(R.id.myList);
 

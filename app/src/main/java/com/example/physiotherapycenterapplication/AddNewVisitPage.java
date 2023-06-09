@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.time.Clock;
@@ -24,6 +25,9 @@ public class AddNewVisitPage extends AppCompatActivity {
     ArrayList<String> doctorData;
     ArrayList<String> patientData;
     public static ArrayList<String> selectServIDs = new ArrayList<>();
+    TextView patName;
+    TextView patAMKA;
+    TextView date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,12 @@ public class AddNewVisitPage extends AppCompatActivity {
         doctorData = extras.getStringArrayList("userDataArrayList");
         patientData = extras.getStringArrayList("patientName");
 
+        patName=findViewById(R.id.textView6);
+        patAMKA=findViewById(R.id.textView);
+        date=findViewById(R.id.textView5);
 
+        patName.setText(patientData.get(1));
+        patAMKA.setText(patientData.get(0));
 
 
         loadServicesList();

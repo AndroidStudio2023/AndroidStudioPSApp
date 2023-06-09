@@ -31,8 +31,10 @@ public class PatientProfilePage extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).setTitle("Σελίδα Προφίλ Ασθενή");
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
+
         //Print patient name
         patientData = extras.getStringArrayList("patientName");
+
         patientAMKAView = findViewById(R.id.amkaTextView);
         patientNameView = findViewById(R.id.firstLastNamePatient);
         patientAddressView = findViewById(R.id.AddressTextView);
@@ -41,12 +43,14 @@ public class PatientProfilePage extends AppCompatActivity {
         patientNameView.setText(patientData.get(1));
         String s2 = patientAddressView.getText().toString();
         patientAddressView.setText(s2+" "+patientData.get(2));
+
     }
 
 
     public void goToHistoryPage(View view) throws IOException {
         Intent intent = new Intent(getApplicationContext(),HistoryPage.class);
-        intent.putExtra("userDataArrayList",doctorData);
+        intent.putExtra("doctorDataArrayList",doctorData);
+        intent.putExtra("patientDataArrayList",patientData);
         startActivity(intent);
     }
 
