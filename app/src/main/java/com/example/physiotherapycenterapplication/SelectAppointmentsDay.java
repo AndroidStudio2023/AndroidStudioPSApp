@@ -27,7 +27,7 @@ public class SelectAppointmentsDay extends AppCompatActivity {
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
-                String selectedDate = day + "/"+(month+1)+"/"+year;
+                String selectedDate = year + "-"+(month+1)+"-"+day;
                 goNextPage(selectedDate);
             }
         });

@@ -20,6 +20,7 @@ public class DailyAppointments extends AppCompatActivity {
     ArrayList<String> doctorData;
     TextView myDate;
     ListView listView;
+    ArrayList<ArrayList<String>> dailyAppointments;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,25 +29,32 @@ public class DailyAppointments extends AppCompatActivity {
         day = extras.getString("date");
         doctorData = extras.getStringArrayList("userDataArrayList");
         myDate = findViewById(R.id.dayTextView);
-        myDate.setText(day);
+        myDate.setText("Τα ραντεβούσας για \n          '"+day+"'");
 
         listView = (ListView) findViewById(R.id.myList);
 
         ArrayList<String> arrayList = new ArrayList<>();
         //Connection....
-        arrayList.add("Patient A, 10:00");
-        arrayList.add("Patient B, 12:00");
-        arrayList.add("Patient C, 14:00");
-        arrayList.add("Patient D, 16:00");
-        arrayList.add("Patient E, 20:00");
-        arrayList.add("Patient F, 21:00");
+        OkHttpMediator mediator = new OkHttpMediator();
+        String url = "http://10.0.2.2/AndroidStudioProviders/getDailyAppointments.php?docID="+doctorData.get(0)+"&date="+day;
+        System.out.println("\n============================URL DATEAPPOINTMENTS ======================\n");
+        System.out.println(url);
+        try {
+            dailyAppointments = mediator.getDailyAppointments(url);
+            for(int i=0; i<dailyAppointments.size(); i++){
+                ArrayList<String> cApp = dailyAppointments.get(i);
+                arrayList.add(cApp.get(0)+", "+cApp.get(1)+" "+cApp.get(2));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
         listView.setAdapter(arrayAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String clickedItem=(String) listView.getItemAtPosition(position);
-                Toast.makeText(DailyAppointments.this,clickedItem,Toast.LENGTH_LONG).show();
+                //Toast.makeText(DailyAppointments.this,clickedItem,Toast.LENGTH_LONG).show();
             }
         });
 
