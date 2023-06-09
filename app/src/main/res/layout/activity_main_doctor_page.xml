@@ -135,6 +135,7 @@
             android:layout_height="50dp"
             android:layout_marginBottom="20dp"
             android:backgroundTint="@color/buttonColor"
+            android:onClick="goToSelectAppointmentsDayPage"
             android:text="Ραντεβού"
             app:layout_constraintBottom_toTopOf="@+id/addNewPatientButton"
             app:layout_constraintEnd_toEndOf="parent"

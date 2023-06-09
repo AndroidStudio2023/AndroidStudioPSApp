@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context=".DailyAppointments">
 
     <TextView
@@ -11,19 +12,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView25" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView25"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/info1" />
+        android:src="@drawable/logo" />
 
     <ListView
         android:id="@+id/myList"
@@ -33,15 +36,16 @@
         app:layout_constraintTop_toBottomOf="@+id/dayTextView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/goCalendarButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/buttonColor"
         android:onClick="goToCalendar"
         android:text="Επιστροφή"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

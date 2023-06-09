@@ -17,6 +17,7 @@ public class DailyAppointments extends AppCompatActivity {
 
     Bundle extras;
     String day;
+    ArrayList<String> doctorData;
     TextView myDate;
     ListView listView;
     @Override
@@ -25,6 +26,7 @@ public class DailyAppointments extends AppCompatActivity {
         setContentView(R.layout.activity_daily_appointments);
         extras = getIntent().getExtras();
         day = extras.getString("date");
+        doctorData = extras.getStringArrayList("userDataArrayList");
         myDate = findViewById(R.id.dayTextView);
         myDate.setText(day);
 
@@ -51,7 +53,13 @@ public class DailyAppointments extends AppCompatActivity {
     }
 
     public void goToCalendar(View v){
-        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(),SelectAppointmentsDay.class);
+        intent.putExtra("userDataArrayList",doctorData);
         startActivity(intent);
+    }
+
+    //Block Back Button
+    public void onBackPressed() {
+        // do nothing.
     }
 }

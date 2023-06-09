@@ -96,6 +96,13 @@ public class Main_doctor_page extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //Apo PM gia metafora sto programma rantevou
+    public void goToSelectAppointmentsDayPage(View view){
+        Intent intent = new Intent(getApplicationContext(), SelectAppointmentsDay.class);
+        intent.putExtra("userDataArrayList",doctorData);
+        startActivity(intent);
+    }
+
     //Log Out function
     public void LogOut(View view){
         Intent intent = new Intent(getApplicationContext(),LoginPageActivity.class);

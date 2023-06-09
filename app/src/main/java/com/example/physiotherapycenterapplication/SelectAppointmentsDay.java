@@ -8,14 +8,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
 
+import java.util.ArrayList;
+
 public class SelectAppointmentsDay extends AppCompatActivity {
 
-    CalendarView calendar = findViewById(R.id.calendarView1);
+    Bundle extras;
+    ArrayList<String> doctorData;
+    CalendarView calendar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_appointments_day);
-
+        calendar = findViewById(R.id.calendarView1);
+        //Bundle
+        extras = getIntent().getExtras();
+        doctorData=extras.getStringArrayList("userDataArrayList");
+        //
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView calendarView, int year, int month, int day) {
@@ -28,6 +36,18 @@ public class SelectAppointmentsDay extends AppCompatActivity {
     public void goNextPage(String s){
         Intent intent = new Intent(getApplicationContext(),DailyAppointments.class);
         intent.putExtra("date",s);
+        intent.putExtra("userDataArrayList",doctorData);
         startActivity(intent);
+    }
+
+    public void goMainDocPage(View v){
+        Intent intent = new Intent(getApplicationContext(),Main_doctor_page.class);
+        intent.putExtra("userDataArrayList",doctorData);
+        startActivity(intent);
+    }
+
+    //Block Back Button
+    public void onBackPressed() {
+        // do nothing.
     }
 }
