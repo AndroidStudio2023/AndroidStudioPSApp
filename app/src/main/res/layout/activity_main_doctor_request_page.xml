@@ -54,56 +54,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/patientsRequestList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- First row with TextViews -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="55dp"
-                    android:gravity="center"
-                    android:text="foteini hliana petrakidou" />
-
-                <Space
-                    android:layout_width="32dp"
-                    android:layout_height="1dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="55dp"
-                    android:gravity="center"
-                    android:text="31/12 12:12" />
-
-                <Space
-                    android:layout_width="24dp"
-                    android:layout_height="1dp" />
-
-                <ImageButton
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:src="@drawable/check_mark_3279" />
-
-                <Space
-                    android:layout_width="8dp"
-                    android:layout_height="1dp" />
-
-                <ImageButton
-                    android:layout_width="55dp"
-                    android:layout_height="55dp"
-                    android:src="@drawable/cancel_close_10373" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
+            android:orientation="vertical"/>
 
     </ScrollView>
 
