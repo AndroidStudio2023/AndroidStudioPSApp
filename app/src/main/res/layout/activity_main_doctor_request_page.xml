@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/_545435" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/AddressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

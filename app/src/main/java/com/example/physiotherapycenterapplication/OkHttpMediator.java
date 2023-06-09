@@ -309,4 +309,32 @@ public class OkHttpMediator {
 
         return requests;
     }
+
+    public ArrayList<ArrayList<String>> getDoctorPatients(String url) throws Exception{
+        ArrayList<ArrayList<String>> patients = new ArrayList<>();
+
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = response.body().string();
+
+        try{
+            JSONArray firstObject = new JSONArray(data);
+            for (int i=0; i<firstObject.length(); i++){
+                JSONArray current = firstObject.getJSONArray(i);
+                ArrayList<String> currentPat = new ArrayList<>();
+                currentPat.add(current.getString(0));
+                currentPat.add(current.getString(1));
+                currentPat.add(current.getString(2));
+                patients.add(currentPat);
+            }
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        return patients;
+
+    }
 }

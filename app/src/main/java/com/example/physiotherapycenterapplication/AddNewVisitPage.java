@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,7 +17,7 @@ public class AddNewVisitPage extends AppCompatActivity {
 
     Bundle extras;
     ArrayList<String> doctorData;
-    String patientName;
+    ArrayList<String> patientData;
     public static ArrayList<String> selectServIDs = new ArrayList<>();
 
     @Override
@@ -28,7 +26,7 @@ public class AddNewVisitPage extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_visit_page);
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
-        patientName = extras.getString("patientName");
+        patientData = extras.getStringArrayList("patientName");
 
 
 
@@ -39,7 +37,7 @@ public class AddNewVisitPage extends AppCompatActivity {
     public void goToPatientProfilePage(View view){
         Intent intent = new Intent(getApplicationContext(),PatientProfilePage.class);
         intent.putExtra("userDataArrayList",doctorData);
-        intent.putExtra("patientName",patientName);
+        intent.putExtra("patientName", patientData);
         startActivity(intent);
     }
 

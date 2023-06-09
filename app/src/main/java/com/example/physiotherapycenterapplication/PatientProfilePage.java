@@ -16,11 +16,12 @@ public class PatientProfilePage extends AppCompatActivity {
 
     Bundle extras;
     //Allazei otan exoume ton Provider
-    String patientName;
+    ArrayList<String> patientData;
     TextView patientNameView;
-
-
+    TextView patientAMKAView;
+    TextView patientAddressView;
     ArrayList<String> doctorData;
+
 
 
     @Override
@@ -31,9 +32,15 @@ public class PatientProfilePage extends AppCompatActivity {
         extras = getIntent().getExtras();
         doctorData = extras.getStringArrayList("userDataArrayList");
         //Print patient name
-        patientName = extras.get("patientName").toString();
+        patientData = extras.getStringArrayList("patientName");
+        patientAMKAView = findViewById(R.id.amkaTextView);
         patientNameView = findViewById(R.id.firstLastNamePatient);
-        patientNameView.setText(patientName);
+        patientAddressView = findViewById(R.id.AddressTextView);
+        String s1 = patientAMKAView.getText().toString();
+        patientAMKAView.setText(s1+" "+patientData.get(0));
+        patientNameView.setText(patientData.get(1));
+        String s2 = patientAddressView.getText().toString();
+        patientAddressView.setText(s2+" "+patientData.get(2));
     }
 
 
@@ -52,7 +59,7 @@ public class PatientProfilePage extends AppCompatActivity {
     public void goToAddVisitPage(View view){
         Intent intent = new Intent(getApplicationContext(),AddNewVisitPage.class);
         intent.putExtra("userDataArrayList",doctorData);
-        intent.putExtra("patientName",patientName);
+        intent.putExtra("patientName",patientData);
         startActivity(intent);
     }
     //Block Back Button

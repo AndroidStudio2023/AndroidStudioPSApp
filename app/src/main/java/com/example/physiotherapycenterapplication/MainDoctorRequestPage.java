@@ -64,7 +64,7 @@ public class MainDoctorRequestPage extends AppCompatActivity {
         TextView dateArea = new TextView(this);
         dateArea.setText(date);
         dateArea.setTextSize(TypedValue.COMPLEX_UNIT_SP,18f);
-        //spaces area
+
         Space sp0 = new Space(this);
         sp0.setMinimumWidth(35);
         Space sp0d = new Space(this);
