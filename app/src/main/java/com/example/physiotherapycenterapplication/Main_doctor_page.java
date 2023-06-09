@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
 import android.view.*;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ public class Main_doctor_page extends AppCompatActivity {
     public Button buttonb;
     Button astheneisButton;
     Bundle extras;
+    String showPopup = "0"; //showPopup = 0 -> doctor hasn't request -> dont show popup
+    LinearLayout popup;
     ArrayList<String> doctorData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,28 @@ public class Main_doctor_page extends AppCompatActivity {
         setContentView(R.layout.activity_main_doctor_page);
         Objects.requireNonNull(getSupportActionBar()).setTitle("Κεντρική Σελίδα Φυσιοθεραπευτή");
 
+        //apo ioanna:
+        extras = getIntent().getExtras();
+        doctorData = extras.getStringArrayList("userDataArrayList");
+        String doctorName = doctorData.get(1);
+
+        popup = findViewById(R.id.popUpArea);
         buttona = (Button) findViewById(R.id.addNewPatientButton);
         buttonb = (Button) findViewById(R.id.patientsButton);
-        //χρειαζομαι τουλαχιστον την αναζητηση των ασθενων για να συνδεσω το κουμπι "Ασθενεις"
-
+        //Print popup
+        OkHttpMediator mediator = new OkHttpMediator();
+        try{
+            String url="http://10.0.2.2/AndroidStudioProviders/getRequestNumber.php?docID="+doctorData.get(0);
+            showPopup = mediator.requestsNumber(url);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        if(showPopup.equals("\"0\"")){
+            //Hide popup
+            popup.setVisibility(View.GONE);
+        }else{
+            popup.setVisibility(View.VISIBLE);
+        }
 
         buttona.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,10 +75,7 @@ public class Main_doctor_page extends AppCompatActivity {
         });
 
 
-        //apo ioanna:
-        extras = getIntent().getExtras();
-        doctorData = extras.getStringArrayList("userDataArrayList");
-        String doctorName = doctorData.get(1);
+
 
         //Split name into lastname and firstname
         String[] doctorSplitName = doctorName.split(" ");

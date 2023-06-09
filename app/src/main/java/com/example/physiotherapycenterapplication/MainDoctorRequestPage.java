@@ -13,8 +13,6 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -80,8 +78,28 @@ public class MainDoctorRequestPage extends AppCompatActivity {
         //Images Buttons Area
         ImageButton checkButton = new ImageButton(this);
         checkButton.setImageResource(R.drawable.check_mark_3279);
+        checkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               //Create appointment success
+                if(createNewAppointment(id,amka,doctorData.get(0),date)){
+                    rowUp.setBackgroundColor(getResources().getColor(R.color.buttonColor));
+                    rowBottom.setBackgroundColor(getResources().getColor(R.color.buttonColor));
+                }
+            }
+        });
         checkButton.setBackground(null);
         ImageButton unCheckButton = new ImageButton(this);
+        unCheckButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Deleted success
+                if(deleteRequest(id)){
+                    rowUp.setBackgroundColor(getResources().getColor(R.color.errorColor));
+                    rowBottom.setBackgroundColor(getResources().getColor(R.color.errorColor));
+                }
+            }
+        });
         unCheckButton.setImageResource(R.drawable.cancel_close_10373);
         unCheckButton.setBackground(null);
 
@@ -107,6 +125,36 @@ public class MainDoctorRequestPage extends AppCompatActivity {
         ArrayList<ArrayList<String>> requests = mediator.getRequests(url);
 
         return requests;
+    }
+
+    public boolean createNewAppointment(String id,String amka,String docID,String date){
+        String url ="http://10.0.2.2/AndroidStudioProviders/createNewAppointment.php?amka="+amka+"&docID="+docID+"&reqTime="+date;
+        OkHttpMediator mediator = new OkHttpMediator();
+        try{
+            String message = mediator.createNewAppointment(url);
+            if(!message.equals("fail")){
+                if(deleteRequest(id)){
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean deleteRequest(String id){
+        String url = "http://10.0.2.2/AndroidStudioProviders/deleteRequest.php?reqID="+id;
+        OkHttpMediator mediator = new OkHttpMediator();
+        try{
+            String message = mediator.deleteRequest(url);
+            if(!message.equals("fail")){
+                return true;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public void goToDoctorMainPage(View view){
