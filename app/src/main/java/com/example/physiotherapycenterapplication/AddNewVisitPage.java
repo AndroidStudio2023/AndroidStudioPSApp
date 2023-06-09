@@ -11,6 +11,10 @@ import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.time.Clock;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -66,7 +70,7 @@ public class AddNewVisitPage extends AppCompatActivity {
                     //0: id, 1: Name, 2: description, 3: cost
 
                     //Fix checkBox
-                    curBox.setText(curServ.get(1)+" "+curServ.get(3)+" €");//Set text
+                    curBox.setText(curServ.get(1)+", "+curServ.get(3)+", €");//Set text
                     curBox.setGravity(Gravity.CENTER_VERTICAL|Gravity.START);//Gravity
                     curBox.setWidth(850);//Width
                     //Margin
@@ -88,6 +92,7 @@ public class AddNewVisitPage extends AppCompatActivity {
                         }
                     });
 
+
                     list.addView(curBox);
                 }
             }
@@ -100,9 +105,32 @@ public class AddNewVisitPage extends AppCompatActivity {
 
     //add visit
     public void AddVisit(View view){
-        for(int i=0; i<selectServIDs.size(); i++){
-            Toast.makeText(this, selectServIDs.get(i), Toast.LENGTH_SHORT).show();
-            selectServIDs.remove(i);
+        System.out.println("======Selected ServIDs================\n");
+        System.out.println(selectServIDs);
+        String servIDs = selectServIDs.toString();
+
+        String url;
+        String cDate=null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            //ZoneId zid = ZoneId.of("Europe/Greek");
+            LocalDateTime now = LocalDateTime.now();
+            cDate=dtf.format(now);
+        }
+        if(cDate!=null){
+            url ="http://10.0.2.2/AndroidStudioProviders/addPatientVisit.php?amka="+patientData.get(0)+"&phyID="+doctorData.get(0)+"&time="+cDate+"&serv="+servIDs;
+            if(selectServIDs.size()>0){
+                System.out.println(url);
+                OkHttpMediator mediator = new OkHttpMediator();
+                try{
+                    String mess = mediator.addVisit(url);
+                    Toast.makeText(this, mess, Toast.LENGTH_SHORT).show();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }else{
+                Toast.makeText(this, "Επιλέξτε Υπηρεσίες...", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

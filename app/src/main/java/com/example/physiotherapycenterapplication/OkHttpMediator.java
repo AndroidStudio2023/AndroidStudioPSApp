@@ -377,4 +377,17 @@ public class OkHttpMediator {
         return  data;
     }
 
+    //Add visit and update history
+    public String addVisit(String url) throws Exception{
+        //Request
+        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
+        Request request = new Request.Builder().url(url).method("POST", body).build();
+        Response response = client.newCall(request).execute();
+        String data = "fail";
+        data = response.body().string();
+
+        return  data;
+    }
+
 }
