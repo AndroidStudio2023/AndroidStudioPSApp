@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/_545435" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/addVisitpageDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView56" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/addVisitpagePatName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -50,7 +50,7 @@
         android:textColor="#171616"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/addVisitpageDate" />
 
     <TextView
         android:id="@+id/textView3"
@@ -117,6 +117,6 @@
         android:textColor="#151515"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/addVisitpagePatName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

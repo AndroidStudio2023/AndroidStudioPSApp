@@ -30,115 +30,102 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
-    <TableLayout
-        android:id="@+id/tableLayout2"
+    <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="64dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchServiceBar">
+        app:layout_constraintTop_toBottomOf="@+id/textView33">
 
-        <TableRow
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fillViewport="true">
 
-            <TextView
-                android:id="@+id/servCodeCol"
-                android:layout_width="70dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="@color/tableHeaderColor"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="Κωδ."
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:layout_gravity="center"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/nameServiceCol"
-                android:layout_width="115dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="@color/tableHeaderColor"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="Όνομα"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                <TableLayout
+                    android:id="@+id/servicesTable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="330dp"
+                    android:layout_gravity="center">
 
-            <TextView
-                android:id="@+id/descriptionServiceCol"
-                android:layout_width="125dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="@color/tableHeaderColor"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="Περιγραφή"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/costServiceCol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="2dp"
-                android:background="@color/tableHeaderColor"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:text="Κόστος"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-        </TableRow>
+                        <TextView
+                            android:id="@+id/servCodeCol"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@color/tableHeaderColor"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="Κωδ."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+                        <TextView
+                            android:id="@+id/nameServiceCol"
+                            android:layout_width="190dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@color/tableHeaderColor"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="Όνομα"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+                        <TextView
+                            android:id="@+id/descriptionServiceCol"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@color/tableHeaderColor"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="Περ."
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/searchServiceBar"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/normal_textfileds_border"
-        android:ems="10"
-        android:hint="Αναζήτηση"
-        android:inputType="textPersonName"
-        android:paddingLeft="5dp"
-        android:paddingBottom="3dp"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+                        <TextView
+                            android:id="@+id/costServiceCol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:background="@color/tableHeaderColor"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="Κόστος"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </TableRow>
 
-    <ImageButton
-        android:id="@+id/searchServButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/normal_textfileds_border"
-        android:padding="5dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="@+id/searchServiceBar"
-        app:layout_constraintEnd_toStartOf="@+id/searchServiceBar"
-        app:layout_constraintTop_toTopOf="@+id/searchServiceBar"
-        app:srcCompat="@drawable/search" />
+                </TableLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
     <Button
         android:id="@+id/addServiceButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/buttonColor"
         android:onClick="moveToCreateServicePage"
         android:text="@string/newServiceButtonText"
         android:textSize="18sp"
@@ -163,10 +150,10 @@
         android:id="@+id/textView37"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/servicesTableHeaderCentralPage"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
