@@ -45,7 +45,7 @@ public class CreateServicePage extends AppCompatActivity {
             String url = "http://10.0.2.2/AndroidStudioProviders/createService.php?id="+code+"&name="+name+"&description="+des+"&cost="+cost;
             try {
                 String mess = mediator.addService(url);
-                if(mess.equals("\"comple\"")){
+                if(mess.equals("\"SUCCESS\"")){
                     clearForm();
                     Toast.makeText(this, "Επιτυχής Δημιουργία", Toast.LENGTH_SHORT).show();
                 }else{
