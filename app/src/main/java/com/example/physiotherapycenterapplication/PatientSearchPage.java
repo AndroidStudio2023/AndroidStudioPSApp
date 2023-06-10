@@ -41,7 +41,7 @@ public class PatientSearchPage extends AppCompatActivity {
         searchView=findViewById(R.id.searchView);
         myListView=findViewById(R.id.listView);
 
-        myListView.setVisibility(View.GONE);
+        myListView.setVisibility(View.VISIBLE);
 
         arrayList=new ArrayList<>();
         //Mediator for load patients
