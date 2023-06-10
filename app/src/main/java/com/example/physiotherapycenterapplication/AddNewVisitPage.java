@@ -38,12 +38,17 @@ public class AddNewVisitPage extends AppCompatActivity {
         doctorData = extras.getStringArrayList("userDataArrayList");
         patientData = extras.getStringArrayList("patientName");
 
-        patName=findViewById(R.id.textView6);
-        patAMKA=findViewById(R.id.textView);
-        date=findViewById(R.id.textView5);
+        patName=findViewById(R.id.addVisitpagePatName);
+        date=findViewById(R.id.addVisitpageDate);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            //ZoneId zid = ZoneId.of("Europe/Greek");
+            LocalDateTime now = LocalDateTime.now();
+            String cDate=dtf.format(now);
+            date.setText(cDate);
+        }
 
-        patName.setText(patientData.get(1));
-        patAMKA.setText(patientData.get(0));
+        patName.setText(patientData.get(0)+"/"+patientData.get(1));
 
 
         loadServicesList();
