@@ -48,52 +48,53 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Σύνδεση ως:"
         android:textColor="@color/black"
         android:textIsSelectable="false"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/PSFLogButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/PSFLogButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/buttonColor"
         android:onClick="moveToLoginPage"
         android:text="@string/LoginPSFButtonName"
         android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toTopOf="@+id/PhisLogButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/PhisLogButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/buttonColor"
         android:onClick="moveToLoginPage"
         android:text="@string/LoginPhysiotherapistButtonName"
         android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toTopOf="@+id/UserLogButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PSFLogButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/UserLogButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
         android:backgroundTint="@color/buttonColor"
         android:onClick="moveToLoginPage"
         android:text="@string/LoginPatientButtonName"
         android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PhisLogButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
