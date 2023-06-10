@@ -58,6 +58,7 @@ public class Main_doctor_page extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Main_doctor_page.this, New_patient.class);
+                intent.putExtra("userDataArrayList",doctorData);
                 startActivity(intent);
             }
         });
