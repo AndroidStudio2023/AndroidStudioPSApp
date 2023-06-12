@@ -128,7 +128,10 @@ public class MainDoctorRequestPage extends AppCompatActivity {
     }
 
     public boolean createNewAppointment(String id,String amka,String docID,String date){
-        String url ="http://10.0.2.2/AndroidStudioProviders/createNewAppointment.php?amka="+amka+"&docID="+docID+"&reqTime="+date;
+        String spl[] = date.split(" ");
+        String day = spl[0];
+        String time = spl[1];
+        String url ="http://10.0.2.2/AndroidStudioProviders/createNewAppointment.php?amka="+amka+"&docID="+docID+"&reqTime="+day+"%20"+time;
         OkHttpMediator mediator = new OkHttpMediator();
         try{
             String message = mediator.createNewAppointment(url);

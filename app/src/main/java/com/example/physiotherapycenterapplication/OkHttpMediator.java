@@ -353,6 +353,8 @@ public class OkHttpMediator {
 
     //Create a new Appointment and return a message
     public String createNewAppointment(String url) throws Exception{
+        System.out.println("-----------------CreateAppointmrnt------------------------\n");
+        System.out.println(url);
         //Request
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create("", MediaType.parse("text/plain"));
